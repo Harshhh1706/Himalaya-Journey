@@ -6,7 +6,7 @@ import delhi from "../assets/delhi.png";
 function Home() {
   return (
     <>
-      <section className="journey-intro">
+    <section id="journey" className="journey-intro">
         <p>THE JOURNEY BEGINS</p>
 
         <h2>Mumbai → Delhi → Manali</h2>

@@ -19,7 +19,13 @@ function Hero() {
           A journey through mountains, trails and unforgettable moments.
         </p>
 
-        <button>EXPLORE JOURNEY</button>
+        <button onClick={() => {
+         document.getElementById("journey").scrollIntoView({
+         behavior: "smooth"
+          });
+        }}>
+         EXPLORE JOURNEY
+        </button>
       </div>
     </section>
   );

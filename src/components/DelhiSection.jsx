@@ -50,7 +50,10 @@ function DelhiSection() {
         </div>
       </div>
       {selectedPlace && (
-  <div className="selected-place">
+     <div
+       key={selectedPlace}
+       className="selected-place"
+        >
     <p>YOU STOPPED HERE</p>
 
     <h3>{selectedPlace}</h3>
