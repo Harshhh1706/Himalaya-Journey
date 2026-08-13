@@ -2,7 +2,7 @@ import manali from "../assets/manali.png";
 
 function ManaliSection() {
   return (
-    <section className="manali-section">
+    <section id="manali" className="manali-section">x
       <div className="manali-image">
         <img src={manali} alt="Manali" />
       </div>

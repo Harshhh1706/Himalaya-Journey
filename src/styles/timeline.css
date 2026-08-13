@@ -1,0 +1,50 @@
+.journey-timeline {
+    min-height: 80vh;
+    padding: 100px 10%;
+    background: #1f2a24;
+    color: white;
+  }
+  
+  .journey-timeline h2 {
+    font-size: 50px;
+    margin: 20px 0 60px;
+  }
+  
+  .timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    position: relative;
+  }
+  
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .timeline div {
+    position: relative;
+    z-index: 1;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    white-space: nowrap;
+    background: #1f2a24;
+  }
+  
+  @media (max-width: 768px) {
+    .timeline {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  
+    .timeline div {
+      font-size: 14px;
+    }
+  }

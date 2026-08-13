@@ -9,7 +9,8 @@ import ReturnJourney from "./components/ReturnJourney";
 import FinalMemory from "./components/FinalMemory";
 import DelhiSection from "./components/DelhiSection";
 
-import "./App.css";
+
+
 function App() {
   return (
     <>

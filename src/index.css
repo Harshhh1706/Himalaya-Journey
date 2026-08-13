@@ -1,6 +1,10 @@
-body {
-  margin: 0;
-}
-html {
-  scroll-behavior: smooth;
-}
+@import "./styles/global.css";
+@import "./styles/hero.css";
+@import "./styles/timeline.css";
+@import "./styles/hampta.css";
+@import "./styles/chandratal.css";
+@import "./styles/manali.css";
+@import "./styles/delhi.css";
+@import "./styles/returnJourney.css";
+@import "./styles/journey.css";
+@import "./styles/destinations.css";

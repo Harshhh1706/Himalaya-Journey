@@ -2,7 +2,7 @@ import chandratal from "../assets/chandratal.jpeg";
 
 function ChandratalSection() {
   return (
-    <section className="chandratal-section">
+    <section id="chandratal" className="chandratal-section">
       <div className="chandratal-content">
         <p>DAY 05 • THE MOON LAKE</p>
 

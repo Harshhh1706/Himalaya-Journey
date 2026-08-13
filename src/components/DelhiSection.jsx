@@ -12,7 +12,7 @@ function DelhiSection() {
   const [selectedPlace, setSelectedPlace] = useState(null);
 
   return (
-    <section className="delhi-section">
+    <section id="delhi" className="delhi-section">
       <div className="delhi-intro">
         <p>ONE DAY • DELHI</p>
 

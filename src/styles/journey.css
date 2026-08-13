@@ -1,0 +1,51 @@
+/* =========================
+   JOURNEY INTRO
+========================= */
+
+.journey-intro {
+    min-height: 70vh;
+    padding: 100px 10%;
+    background: #f5f2eb;
+    color: #222;
+  
+    animation: journeyReveal 1s ease-out both;
+  }
+  
+  .journey-intro > p:first-child {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+  
+  .journey-intro h2 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -2px;
+    font-weight: 500;
+    max-width: 800px;
+    margin: 20px 0;
+  }
+  
+  .journey-intro > p:last-child {
+    max-width: 550px;
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.65;
+  }
+  
+  /* =========================
+     JOURNEY ANIMATION
+  ========================= */
+  
+  @keyframes journeyReveal {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
