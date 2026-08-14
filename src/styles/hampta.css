@@ -95,3 +95,22 @@
       width: 100%;
     }
   }
+  .hampta-meta {
+    font-size: 11px !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin: 0 0 25px !important;
+  }
+  .hampta-story {
+    margin-top: 25px !important;
+    opacity: 0.65;
+    max-width: 450px;
+  }
+  .hampta-divider {
+    width: 60px;
+    margin: 0 0 25px;
+    border: 0;
+    border-top: 1px solid currentColor;
+    opacity: 0.25;
+  }

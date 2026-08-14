@@ -8,16 +8,26 @@ function HamptaSection() {
       </div>
 
       <div className="hampta-content">
-      <p className="hampta-tag">THE MAIN TRAIL</p>
-        <p>04 DAYS • HIMALAYAS</p>
+  <p className="hampta-tag">THE MAIN TRAIL</p>
 
-        <h2>Where the trail changed everything.</h2>
+  <h2>Hampta Pass</h2>
 
-        <p>
-          Four days of walking deeper into the mountains,
-          away from roads, noise and everything familiar.
-        </p>
-      </div>
+  <p className="hampta-meta">
+    HIMACHAL PRADESH · 4 DAYS · 14,100 FT
+  </p>
+  <hr className="hampta-divider" />
+
+<p>
+  Four days of trekking through the Himalayas.
+</p>
+
+  <p className="hampta-story">
+  The trail began in the green valleys of Manali and slowly
+  climbed into the raw, dramatic landscape of the Himalayas.
+  Four days of walking, changing weather and unforgettable
+  views made Hampta Pass the heart of this journey.
+</p>
+</div>
     </section>
   );
 }
