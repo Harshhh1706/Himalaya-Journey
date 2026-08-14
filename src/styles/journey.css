@@ -3,49 +3,76 @@
 ========================= */
 
 .journey-intro {
-    min-height: 70vh;
-    padding: 100px 10%;
-    background: #f5f2eb;
-    color: #222;
-  
-    animation: journeyReveal 1s ease-out both;
+  padding: 100px 10% 70px;
+
+  background: #f5f2eb;
+  color: #222;
+
+  animation: journeyReveal 1s ease-out both;
+}
+
+/* Small label */
+
+.journey-intro > p:first-child {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+/* Main heading */
+
+.journey-intro h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  font-weight: 500;
+
+  max-width: 900px;
+
+  margin: 20px 0;
+}
+
+/* Description */
+
+.journey-intro > p:last-child {
+  max-width: 550px;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  opacity: 0.65;
+}
+
+/* =========================
+   JOURNEY ANIMATION
+========================= */
+
+@keyframes journeyReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  .journey-intro > p:first-child {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.55;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .journey-intro {
+    padding: 80px 7% 50px;
+  }
+
   .journey-intro h2 {
-    font-size: clamp(42px, 6vw, 72px);
-    line-height: 0.95;
-    letter-spacing: -2px;
-    font-weight: 500;
-    max-width: 800px;
-    margin: 20px 0;
+    font-size: 50px;
   }
-  
-  .journey-intro > p:last-child {
-    max-width: 550px;
-    font-size: 17px;
-    line-height: 1.7;
-    opacity: 0.65;
-  }
-  
-  /* =========================
-     JOURNEY ANIMATION
-  ========================= */
-  
-  @keyframes journeyReveal {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+}

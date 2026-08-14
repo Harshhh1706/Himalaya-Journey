@@ -1,34 +1,266 @@
+/* =========================
+   CHANDRATAL SECTION
+========================= */
+
 .chandratal-section {
-    min-height: 80vh;
-    padding: 100px 8%;
-    display: flex;
-    align-items: center;
-    gap: 70px;
-    background: #f5f2eb;
+  min-height: 100vh;
+  padding: 130px 8%;
+
+  background: #f5f2eb;
+  color: #171a17;
+
+  display: flex;
+  align-items: center;
+  gap: 8%;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.chandratal-content {
+  flex: 0.85;
+  max-width: 470px;
+}
+
+.chandratal-chapter {
+  margin: 0 0 25px;
+
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: #6f7068;
+}
+
+.chandratal-content h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(65px, 7vw, 90px);
+
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -2px;
+}
+
+.chandratal-location {
+  margin: 25px 0 0;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #6f7068;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.chandratal-divider {
+  width: 0;
+  height: 1px;
+
+  margin: 35px 0;
+
+  background: #171a17;
+  opacity: 0.25;
+
+  transition: width 0.7s ease;
+}
+
+.chandratal-visible .chandratal-divider {
+  width: 60px;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.chandratal-lead {
+  margin: 0 0 15px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.chandratal-story {
+  max-width: 450px;
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: #6f7068;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.chandratal-stats {
+  display: flex;
+  gap: 35px;
+
+  margin-top: 45px;
+}
+
+.chandratal-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chandratal-stats div + div {
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  padding-left: 35px;
+}
+
+.chandratal-stats strong {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.chandratal-stats span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #6f7068;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.chandratal-image {
+  flex: 1.5;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.chandratal-image img {
+  width: 100%;
+  height: 680px;
+
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.8s ease;
+}
+
+.chandratal-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Image gradient */
+
+.chandratal-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.35),
+    transparent 35%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================
+   IMAGE CAPTION
+========================= */
+
+.chandratal-caption {
+  position: absolute;
+
+  bottom: 20px;
+  left: 25px;
+  right: 25px;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: white;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+
+  z-index: 2;
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.chandratal-section .chandratal-content,
+.chandratal-section .chandratal-image {
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.chandratal-visible .chandratal-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chandratal-visible .chandratal-image {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition-delay: 0.15s;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .chandratal-section {
+    flex-direction: column;
+
+    padding: 80px 7%;
+    gap: 50px;
   }
-  
+
   .chandratal-content {
-    flex: 0.8;
-  }
-  
-  .chandratal-content h2 {
-    font-size: 50px;
-    line-height: 1;
-    margin: 20px 0;
-  }
-  
-  .chandratal-content p {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  .chandratal-image {
-    flex: 1.2;
-  }
-  
-  .chandratal-image img {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
   }
+
+  .chandratal-image {
+    width: 100%;
+  }
+
+  .chandratal-image img {
+    height: 55vw;
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  .chandratal-content h2 {
+    font-size: 60px;
+  }
+
+  .chandratal-stats {
+    gap: 20px;
+  }
+
+  .chandratal-stats div + div {
+    padding-left: 20px;
+  }
+}

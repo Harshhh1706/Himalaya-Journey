@@ -1,50 +1,209 @@
+/* =========================
+   JOURNEY TIMELINE
+========================= */
+
 .journey-timeline {
-    min-height: 80vh;
-    padding: 100px 10%;
-    background: #1f2a24;
-    color: white;
+  min-height: 55vh;
+  padding: 100px 8%;
+
+  background: #171f1b;
+  color: #f5f2eb;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.timeline-heading {
+  margin-bottom: 70px;
+}
+
+.timeline-heading p {
+  margin: 0 0 25px;
+
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: #a5aaa4;
+}
+
+.timeline-heading h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(50px, 6vw, 72px);
+
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline-stop {
+  position: relative;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: default;
+}
+
+/* Connecting line */
+
+.timeline-stop::before {
+  content: "";
+
+  position: absolute;
+
+  top: 31px;
+  left: 0;
+  right: 0;
+
+  height: 1px;
+
+  background: rgba(245, 242, 235, 0.25);
+}
+
+.timeline-stop:first-child::before {
+  left: 50%;
+}
+
+.timeline-stop:last-child::before {
+  right: 50%;
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.timeline-number {
+  margin-bottom: 12px;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  color: #8f9690;
+}
+
+/* =========================
+   DOT
+========================= */
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+
+  border: 1px solid #a5aaa4;
+  border-radius: 50%;
+
+  background: #171f1b;
+
+  position: relative;
+  z-index: 2;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.timeline-place {
+  margin-top: 20px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.timeline-stop:hover .timeline-dot {
+  transform: scale(1.5);
+  background: #f5f2eb;
+}
+
+.timeline-stop:hover .timeline-place {
+  transform: translateY(4px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .journey-timeline {
+    padding: 80px 7%;
   }
-  
-  .journey-timeline h2 {
-    font-size: 50px;
-    margin: 20px 0 60px;
-  }
-  
+
   .timeline {
-    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-left: 10px;
+  }
+
+  .timeline-stop {
+    width: 100%;
+
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    position: relative;
+
+    padding: 15px 0;
   }
-  
-  .timeline::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.3);
+
+  .timeline-stop::before {
+    top: 0;
+    bottom: 0;
+
+    left: 5px;
+    right: auto;
+
+    width: 1px;
+    height: auto;
   }
-  
-  .timeline div {
-    position: relative;
-    z-index: 1;
-    padding: 15px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 30px;
-    white-space: nowrap;
-    background: #1f2a24;
+
+  .timeline-stop:first-child::before,
+  .timeline-stop:last-child::before {
+    left: 5px;
+    right: auto;
   }
-  
-  @media (max-width: 768px) {
-    .timeline {
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-  
-    .timeline div {
-      font-size: 14px;
-    }
+
+  .timeline-number {
+    width: 35px;
+    margin: 0;
   }
+
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-place {
+    margin: 0 0 0 20px;
+
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,69 @@
+/* =========================
+   FINAL MEMORY
+========================= */
+
+.final-memory {
+    padding: 110px 8% 130px;
+  
+    background: #f5f2eb;
+    color: #171a17;
+  
+    text-align: center;
+  }
+  
+  /* Small label */
+  
+  .final-memory-label {
+    margin: 0 0 25px;
+  
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  
+    color: #6f7068;
+  }
+  
+  /* Main heading */
+  
+  .final-memory h2 {
+    margin: 0;
+  
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 6vw, 72px);
+  
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -1.5px;
+  }
+  
+  /* Description */
+  
+  .final-memory > p:last-child {
+    max-width: 600px;
+  
+    margin: 30px auto 0;
+  
+    font-size: 16px;
+    line-height: 1.7;
+  
+    color: #6f7068;
+  }
+  
+  
+  /* =========================
+     MOBILE
+  ========================= */
+  
+  @media (max-width: 768px) {
+    .final-memory {
+      padding: 90px 7% 100px;
+    }
+  
+    .final-memory h2 {
+      font-size: 48px;
+    }
+  
+    .final-memory > p:last-child {
+      font-size: 15px;
+    }
+  }

@@ -1,29 +1,33 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Home from "./pages/Home";
-import JourneyTimeline from "./components/JourneyTimeline";
 import HamptaSection from "./components/HamptaSection1";
 import ChandratalSection from "./components/ChandratalSection";
 import ManaliSection from "./components/ManaliSection";
-import ReturnJourney from "./components/ReturnJourney";
-import FinalMemory from "./components/FinalMemory";
 import DelhiSection from "./components/DelhiSection";
-
-
+import JourneyTimeline from "./components/JourneyTimeline";
+import FinalMemory from "./components/FinalMemory";
 
 function App() {
   return (
     <>
       <Navbar />
+
       <Hero />
+
       <Home />
-      <JourneyTimeline />
+
       <HamptaSection />
+
       <ChandratalSection />
+
       <ManaliSection />
-      <ReturnJourney />
-      <FinalMemory />
+
       <DelhiSection />
+
+      <JourneyTimeline />
+
+      <FinalMemory />
     </>
   );
 }
