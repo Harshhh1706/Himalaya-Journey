@@ -77,11 +77,10 @@ function ChandratalSection() {
 
       <div className="chandratal-image">
         <img src={chandratal} alt="Chandratal Lake" />
-
         <div className="chandratal-caption">
-          <span>CHANDRATAL LAKE · HIMACHAL</span>
-          <span>02 / 06</span>
-        </div>
+          <span>CHANDRATAL LAKE</span>
+          <span>MOON LAKE · HIMACHAL</span>
+          </div>
       </div>
 
     </section>

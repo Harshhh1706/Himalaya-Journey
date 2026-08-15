@@ -229,11 +229,9 @@
 /* =========================
    MOBILE
 ========================= */
-
 @media (max-width: 768px) {
   .chandratal-section {
     flex-direction: column;
-
     padding: 80px 7%;
     gap: 50px;
   }
@@ -257,10 +255,45 @@
   }
 
   .chandratal-stats {
-    gap: 20px;
+    gap: 30px;
   }
 
   .chandratal-stats div + div {
-    padding-left: 20px;
+    padding-left: 30px;
   }
+  .chandratal-stats {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+  
+  .chandratal-stats div + div {
+    padding-left: 25px;
+  }
+  .chandratal-content h2 {
+    font-size: 52px;
+    letter-spacing: -1px;
+  }
+  
+  .chandratal-lead {
+    font-size: 24px;
+  }
+  
+  .chandratal-story {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  
+  .chandratal-caption {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    font-size: 8px;
+  }
+} 
+.chandratal-caption {
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
+
+.chandratal-image:hover .chandratal-caption {
+  transform: translateY(-5px);
+} 
