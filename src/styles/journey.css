@@ -1,66 +1,123 @@
 /* =========================
-   JOURNEY INTRO
+   JOURNEY ROUTE
 ========================= */
 
 .journey-intro {
-  padding: 100px 10% 70px;
-
+  padding: 90px 8% 80px;
   background: #f5f2eb;
   color: #222;
-
-  animation: journeyReveal 1s ease-out both;
+  text-align: center;
 }
 
-/* Small label */
+.journey-label {
+  margin: 0 0 45px;
 
-.journey-intro > p:first-child {
-  font-size: 11px;
-  letter-spacing: 3px;
+  font-size: 10px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 
-  opacity: 0.55;
+  opacity: 0.5;
 }
 
-/* Main heading */
+/* Route */
 
-.journey-intro h2 {
+.journey-route {
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Place */
+
+.route-place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 120px;
+}
+
+.route-dot {
+  width: 9px;
+  height: 9px;
+
+  border: 1px solid #222;
+  border-radius: 50%;
+
+  margin-bottom: 15px;
+
+  background: #f5f2eb;
+}
+
+.route-place strong {
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: 0.95;
-  letter-spacing: -2px;
+  font-size: 28px;
   font-weight: 500;
 
-  max-width: 900px;
+  letter-spacing: -0.5px;
+}
 
-  margin: 20px 0;
+.route-place small {
+  margin-top: 6px;
+
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  opacity: 0.45;
+}
+
+/* Connecting line */
+
+.route-line {
+  width: 150px;
+  height: 1px;
+
+  background: #222;
+  opacity: 0.2;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.route-line::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: #222;
+
+  transform: translateX(-100%);
+
+  animation: routeTravel 1.2s ease forwards;
+}
+
+.route-line:nth-of-type(2)::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes routeTravel {
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Description */
 
-.journey-intro > p:last-child {
-  max-width: 550px;
+.journey-description {
+  max-width: 500px;
 
-  font-size: 17px;
+  margin: 45px auto 0;
+
+  font-size: 14px;
   line-height: 1.7;
 
-  opacity: 0.65;
-}
-
-/* =========================
-   JOURNEY ANIMATION
-========================= */
-
-@keyframes journeyReveal {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 0.6;
 }
 
 /* =========================
@@ -68,11 +125,68 @@
 ========================= */
 
 @media (max-width: 768px) {
+
   .journey-intro {
-    padding: 80px 7% 50px;
+    padding: 70px 7%;
   }
 
-  .journey-intro h2 {
-    font-size: 50px;
+  .journey-label {
+    margin-bottom: 35px;
   }
+
+  .journey-route {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .route-line {
+    width: 1px;
+    height: 45px;
+  }
+
+  .route-line::after {
+    transform: translateY(-100%);
+    animation: routeTravelVertical 1s ease forwards;
+  }
+
+  @keyframes routeTravelVertical {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .route-place strong {
+    font-size: 25px;
+  }
+
+  .journey-description {
+    margin-top: 35px;
+    font-size: 13px;
+  }
+}
+
+.route-place {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.route-place:hover {
+  transform: translateY(-5px);
+}
+
+.route-dot {
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.route-place:hover .route-dot {
+  transform: scale(1.5);
+  background: #222;
+  box-shadow: 0 0 0 6px rgba(34, 34, 34, 0.08);
+}
+
+.route-place:hover strong {
+  opacity: 0.65;
 }
