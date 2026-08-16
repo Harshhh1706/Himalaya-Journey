@@ -1,16 +1,55 @@
-# React + Vite
+# 🏔️ Himalaya Journey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Himalaya Journey** is a personal travel website inspired by my journey through the Himalayas.
 
-Currently, two official plugins are available:
+This project is based on my **own travel experiences, photographs, and videos**, bringing together the places I visited, moments I captured, and memories from the journey into one interactive website.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+* 🏔️ Himalayan destinations & experiences
+* 📸 Personal travel photographs
+* 🎥 Travel videos & memories
+* 📖 Journey-inspired stories
+* 🎨 Aesthetic and responsive UI
+* ⚛️ Reusable React components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+### Frontend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React**
+* **Vite**
+* **JavaScript (ES6+)**
+* **HTML5**
+* **CSS3**
+
+### UI & Styling
+
+* **Material UI (MUI)**
+* **Emotion**
+* **Roboto Font**
+
+### Development Tools
+
+* **VS Code**
+* **Git**
+* **GitHub**
+* **ESLint**
+
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/Harshhh1706/Himalaya-Journey.git
+cd Himalaya-Journey
+npm install
+npm run dev
+```
+
+## 💭 About the Project
+
+> **More than a website — a digital collection of places, moments, photographs, and memories from my Himalayan journey.**
+
+## 👨‍💻 Author
+
+**Harsh**
+[GitHub](https://github.com/Harshhh1706)
