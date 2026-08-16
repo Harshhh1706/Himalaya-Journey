@@ -9,7 +9,7 @@
 
   padding: 70px 8%;
 
-  background: #f5f2eb;
+  background: #F4F3EE;
 }
 
 .destination-card {
@@ -21,14 +21,44 @@
   overflow: hidden;
   cursor: pointer;
 
+  opacity: 0;
+  transform: translateY(35px);
+
   transition:
-    transform 0.4s ease,
+    opacity 0.8s ease,
+    transform 0.8s ease,
     box-shadow 0.4s ease;
 }
 
+.destination-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Stagger cards */
+
+.destination-card:nth-child(2) {
+  transition-delay: 0.12s;
+}
+
+.destination-card:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+.destination-card:nth-child(4) {
+  transition-delay: 0.36s;
+}
+
+
 /* =========================
-   CARD IMAGE
+   IMAGE
 ========================= */
+
+.destination-image {
+  position: relative;
+  overflow: hidden;
+}
 
 .destination-card img {
   width: 100%;
@@ -38,12 +68,58 @@
   display: block;
 
   transition:
-    transform 0.5s ease,
+    transform 0.6s ease,
     filter 0.5s ease;
 }
 
+
 /* =========================
-   CARD TEXT
+   IMAGE OVERLAY
+========================= */
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5),
+    transparent 55%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+
+/* =========================
+   VIEW STORY
+========================= */
+
+.destination-view {
+  position: absolute;
+
+  right: 18px;
+  bottom: 16px;
+
+  color: white;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+/* =========================
+   TEXT
 ========================= */
 
 .destination-card span,
@@ -61,12 +137,15 @@
 
   font-size: 10px;
   letter-spacing: 2px;
+
   text-transform: uppercase;
 
   opacity: 0.6;
 }
 
 .destination-card h3 {
+  font-family: "Cormorant Garamond", serif;
+
   font-size: 27px;
   line-height: 1;
 
@@ -85,44 +164,67 @@
   opacity: 0.7;
 }
 
+
 /* =========================
-   CARD HOVER
+   HOVER
 ========================= */
 
 .destination-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px);
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.12);
+    0 18px 40px rgba(0, 0, 0, 0.13);
 }
 
 .destination-card:hover img {
-  transform: scale(1.04);
-  filter: brightness(0.88);
+  transform: scale(1.06);
+
+  filter: brightness(0.82);
 }
+
+.destination-card:hover .destination-overlay {
+  opacity: 1;
+}
+
+.destination-card:hover .destination-view {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
 
 /* =========================
-   VIEW STORY
+   MOBILE
 ========================= */
 
-.view-story {
-  display: block;
+@media (max-width: 900px) {
+  .destinations {
+    grid-template-columns: repeat(2, 1fr);
 
-  margin: 0 20px 20px;
-
-  font-size: 10px;
-  letter-spacing: 2px;
-
-  opacity: 0.6;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    padding: 60px 6%;
+  }
 }
 
-.destination-card:hover .view-story {
-  opacity: 1;
-  transform: translateX(5px);
+@media (max-width: 600px) {
+  .destinations {
+    grid-template-columns: 1fr;
+
+    padding: 50px 7%;
+  }
+
+  .destination-card img {
+    height: 220px;
+  }
+
+  .destination-card h3 {
+    font-size: 30px;
+  }
+
+  .destination-card:nth-child(2),
+  .destination-card:nth-child(3),
+  .destination-card:nth-child(4) {
+    transition-delay: 0s;
+  }
 }
 
 /* =========================
@@ -134,38 +236,37 @@
 
   text-align: center;
 
-  background: #f5f2eb;
+  background: #F4F3EE;
+  color: #1B211E;
 }
 
 .travel-quote p {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  font-family: "Cormorant Garamond", serif;
+
   font-size: 34px;
   line-height: 1.4;
 
   font-style: italic;
+
+  font-weight: 400;
 }
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 900px) {
-  .destinations {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 60px 6%;
-  }
-}
-
-@media (max-width: 600px) {
-  .destinations {
-    grid-template-columns: 1fr;
-    padding: 50px 7%;
+@media (max-width: 768px) {
+  .travel-quote {
+    padding: 80px 8%;
   }
 
-  .destination-card img {
-    height: 220px;
-  }
-
-  .destination-card h3 {
-    font-size: 30px;
+  .travel-quote p {
+    font-size: 28px;
+    line-height: 1.35;
   }
 }

@@ -1,6 +1,34 @@
+import { useEffect, useRef, useState } from "react";
+
 function FinalMemory() {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="final-memory">
+    <section
+      ref={sectionRef}
+      className={`final-memory ${visible ? "memory-visible" : ""}`}
+    >
+      <div className="memory-line"></div>
+
       <p className="final-memory-label">
         THE LAST MEMORY
       </p>
@@ -8,7 +36,7 @@ function FinalMemory() {
       <h2>
         The journey ended.
         <br />
-        The mountains stayed.
+        <em>The mountains stayed.</em>
       </h2>
 
       <p className="final-memory-text">

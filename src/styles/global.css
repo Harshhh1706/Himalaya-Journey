@@ -18,3 +18,74 @@
   body {
     overflow-x: hidden;
   }
+  /* =========================
+   PAGE TRANSITION POLISH
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 20px;
+}
+
+/* Prevent accidental horizontal overflow */
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Better text rendering */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* =========================
+   SECTION TRANSITION POLISH
+========================= */
+
+section {
+  position: relative;
+}
+
+/* subtle divider between major sections */
+
+.journey-intro::after,
+.destinations::after,
+.travel-quote::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+
+  width: 84%;
+  height: 1px;
+
+  background: rgba(23, 26, 23, 0.08);
+}
+
+/* prevent divider on dark sections */
+
+.journey-timeline::after,
+.final-memory::after {
+  display: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .journey-intro::after,
+  .destinations::after,
+  .travel-quote::after {
+    left: 7%;
+    width: 86%;
+  }
+}

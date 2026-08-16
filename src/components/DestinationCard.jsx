@@ -1,42 +1,67 @@
+import { useEffect, useRef, useState } from "react";
+
 function DestinationCard({ title, description, image, tag }) {
+  const cardRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const sectionMap = {
+    "Hampta Pass": "hampta",
+    "Chandratal Lake": "chandratal",
+    Manali: "manali",
+    Delhi: "delhi",
+  };
+
+  const handleClick = () => {
+    document
+      .getElementById(sectionMap[title])
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div
-  className="destination-card"
-  onClick={() => {
-    if (title === "Hampta Pass") {
-      document.getElementById("hampta")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-    
-    if (title === "Chandratal Lake") {
-      document.getElementById("chandratal")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-    if (title === "Manali") {
-      document.getElementById("manali")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-    if (title === "Delhi") {
-      document.getElementById("delhi")?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  }}
->
-      <img src={image} alt={title} />
+      ref={cardRef}
+      className={`destination-card ${
+        visible ? "destination-card-visible" : ""
+      }`}
+      onClick={handleClick}
+    >
+      <div className="destination-image">
+        <img src={image} alt={title} />
 
-      <span>{tag}</span>
+        <div className="destination-overlay"></div>
 
-      <h3>{title}</h3>
+        <span className="destination-view">
+          VIEW STORY →
+        </span>
+      </div>
 
-      <p>{description}</p>
+      <div className="destination-info">
+        <span className="destination-tag">
+          {tag}
+        </span>
 
-      <span className="view-story">
-       VIEW STORY →
-      </span>
+        <h3>{title}</h3>
+
+        <p>{description}</p>
+      </div>
     </div>
   );
 }

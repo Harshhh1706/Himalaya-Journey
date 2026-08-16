@@ -20,6 +20,8 @@ const placeStories = {
     "The final stop of a long day of exploring Delhi.",
 };
 
+const places = Object.keys(placeStories);
+
 function DelhiSection() {
   const [selectedPlace, setSelectedPlace] = useState(null);
 
@@ -39,29 +41,27 @@ function DelhiSection() {
 
       <div className="delhi-places">
 
-        <div onClick={() => setSelectedPlace("Red Fort")}>
-          Red Fort
-        </div>
+        {places.map((place, index) => (
+          <div
+            key={place}
+            className={`delhi-place ${
+              selectedPlace === place ? "delhi-place-active" : ""
+            }`}
+            onClick={() => setSelectedPlace(place)}
+          >
+            <span className="delhi-place-number">
+              0{index + 1}
+            </span>
 
-        <div onClick={() => setSelectedPlace("Lotus Temple")}>
-          Lotus Temple
-        </div>
+            <span className="delhi-place-name">
+              {place}
+            </span>
 
-        <div onClick={() => setSelectedPlace("Raj Ghat")}>
-          Raj Ghat
-        </div>
-
-        <div onClick={() => setSelectedPlace("Qutub Minar")}>
-          Qutub Minar
-        </div>
-
-        <div onClick={() => setSelectedPlace("Humayun's Tomb")}>
-          Humayun's Tomb
-        </div>
-
-        <div onClick={() => setSelectedPlace("India Gate")}>
-          India Gate
-        </div>
+            <span className="delhi-place-arrow">
+              →
+            </span>
+          </div>
+        ))}
 
       </div>
 

@@ -3,11 +3,11 @@
 ========================= */
 
 .final-memory {
-  min-height: 65vh;
+  min-height: 70vh;
   padding: 120px 8%;
 
-  background: #171a17;
-  color: #f5f2eb;
+  background: #1B211E;
+  color: #F4F3EE;
 
   display: flex;
   flex-direction: column;
@@ -15,38 +15,120 @@
   align-items: center;
 
   text-align: center;
+
+  position: relative;
+  overflow: hidden;
 }
 
+/* =========================
+   TOP LINE
+========================= */
+
+.memory-line {
+  width: 0;
+  height: 1px;
+
+  margin-bottom: 35px;
+
+  background: rgba(245, 242, 235, 0.35);
+
+  transition: width 1s ease;
+}
+
+.memory-visible .memory-line {
+  width: 55px;
+}
+
+/* =========================
+   LABEL
+========================= */
+
 .final-memory-label {
-  margin: 0 0 30px;
+  margin: 0 0 28px;
 
   font-size: 10px;
   letter-spacing: 4px;
   text-transform: uppercase;
 
-  opacity: 0.5;
+  color: #AEBAB3;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
+
+.memory-visible .final-memory-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   HEADING
+========================= */
 
 .final-memory h2 {
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(50px, 7vw, 90px);
-  line-height: 0.9;
+
+  font-size: clamp(52px, 7vw, 92px);
+
   font-weight: 500;
+  line-height: 0.88;
+
   letter-spacing: -2px;
+
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 1s ease 0.15s,
+    transform 1s ease 0.15s;
 }
+
+.memory-visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.final-memory h2 em {
+  font-weight: 400;
+  opacity: 0.55;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
 
 .final-memory-text {
-  max-width: 500px;
+  max-width: 480px;
 
-  margin: 30px 0 0;
+  margin: 32px 0 0;
 
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.8;
 
-  opacity: 0.6;
+  color: #AEBAB3;
+
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.8s ease 0.45s,
+    transform 0.8s ease 0.45s;
 }
+
+.memory-visible .final-memory-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* =========================
    MOBILE
@@ -54,16 +136,21 @@
 
 @media (max-width: 768px) {
   .final-memory {
-    min-height: 60vh;
+    min-height: 65vh;
     padding: 90px 7%;
   }
 
   .final-memory h2 {
-    font-size: 52px;
+    font-size: 53px;
     letter-spacing: -1px;
   }
 
   .final-memory-text {
+    max-width: 330px;
     font-size: 14px;
+  }
+
+  .memory-mark {
+    margin-top: 45px;
   }
 }

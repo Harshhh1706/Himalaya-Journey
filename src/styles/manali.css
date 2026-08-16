@@ -7,7 +7,7 @@
   padding: 130px 8%;
 
   background: #e9e4d8;
-  color: #171a17;
+  color: #1B211E;
 
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@
   letter-spacing: 3px;
   text-transform: uppercase;
 
-  color: #6f7068;
+  color: #53615A;
 }
 
 .manali-content h2 {
@@ -121,7 +121,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  color: #6f7068;
+  color: #53615A;
 }
 
 /* =========================
@@ -134,7 +134,7 @@
 
   margin: 35px 0;
 
-  background: #171a17;
+  background: #1B211E;
   opacity: 0.25;
 
   transition: width 0.7s ease;
@@ -163,7 +163,7 @@
   font-size: 16px;
   line-height: 1.8;
 
-  color: #6f7068;
+  color: #53615A;
 }
 
 /* =========================
@@ -182,7 +182,7 @@
   letter-spacing: 3px;
   text-transform: uppercase;
 
-  color: #6f7068;
+  color: #53615A;
 }
 
 .manali-memory p {

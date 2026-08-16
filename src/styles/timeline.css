@@ -1,153 +1,237 @@
 /* =========================
-   JOURNEY TIMELINE
+   THE WAY HOME
 ========================= */
 
 .journey-timeline {
-  min-height: 55vh;
-  padding: 100px 8%;
+  min-height: 100vh;
 
-  background: #171f1b;
-  color: #f5f2eb;
+  padding: 130px 8%;
+
+  background: #14221D;
+  color: #F4F3EE;
+
+  overflow: hidden;
 }
 
+
 /* =========================
-   HEADING
+   HEADING - CENTERED
 ========================= */
 
 .timeline-heading {
-  margin-bottom: 70px;
+  max-width: 850px;
+  margin: 0 auto 90px;
+
+  text-align: center;
 }
 
 .timeline-heading p {
   margin: 0 0 25px;
 
   font-size: 10px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 
-  color: #a5aaa4;
+  color: #AEBAB3;
 }
 
 .timeline-heading h2 {
-  margin: 0;
+  margin: 0 auto;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(50px, 6vw, 72px);
+
+  font-size: clamp(55px, 7vw, 90px);
 
   font-weight: 500;
-  line-height: 0.95;
+  line-height: 0.88;
+
+  letter-spacing: -2px;
+
+  max-width: 800px;
 }
+
+.timeline-heading > span {
+  display: block;
+
+  max-width: 420px;
+
+  margin: 30px auto 0;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #AEBAB3;
+}
+
 
 /* =========================
    TIMELINE
 ========================= */
 
 .timeline {
-  width: 100%;
-
-  display: flex;
-  align-items: flex-start;
-}
-
-.timeline-stop {
   position: relative;
 
-  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  cursor: default;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-/* Connecting line */
 
-.timeline-stop::before {
+/* Main line */
+
+.timeline::before {
   content: "";
 
   position: absolute;
 
-  top: 31px;
-  left: 0;
-  right: 0;
+  top: 19px;
+  left: 12.5%;
+  right: 12.5%;
 
   height: 1px;
 
-  background: rgba(245, 242, 235, 0.25);
+  background: rgba(245, 242, 235, 0.2);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 1.5s ease;
 }
 
-.timeline-stop:first-child::before {
-  left: 50%;
+.timeline-visible .timeline::before {
+  transform: scaleX(1);
 }
 
-.timeline-stop:last-child::before {
-  right: 50%;
-}
 
 /* =========================
-   NUMBER
+   STOP
 ========================= */
 
-.timeline-number {
-  margin-bottom: 12px;
+.timeline-stop {
+  position: relative;
 
-  font-size: 9px;
+  padding: 0 18px;
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.timeline-visible .timeline-stop {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================
+   MARKER
+========================= */
+
+.timeline-marker {
+  position: relative;
+
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-marker > span {
+  position: absolute;
+
+  top: -3px;
+
+  font-size: 8px;
   letter-spacing: 2px;
 
-  color: #8f9690;
+  color: #737b75;
 }
 
-/* =========================
-   DOT
-========================= */
-
 .timeline-dot {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
 
-  border: 1px solid #a5aaa4;
+  border: 1px solid #aeb5ae;
   border-radius: 50%;
 
-  background: #171f1b;
+  background: #14221D;
 
   position: relative;
   z-index: 2;
 
   transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
+
 
 /* =========================
-   LOCATION
+   CONTENT
 ========================= */
 
-.timeline-place {
-  margin-top: 20px;
+.timeline-content {
+  margin-top: 35px;
+}
+
+.timeline-content p {
+  margin: 0 0 10px;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #737b75;
+}
+
+.timeline-content h3 {
+  margin: 0 0 12px;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
 
-  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
 
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
+  line-height: 1;
+
+  transition: transform 0.35s ease;
 }
+
+.timeline-content > span {
+  display: block;
+
+  max-width: 190px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: #AEBAB3;
+}
+
 
 /* =========================
    HOVER
 ========================= */
 
 .timeline-stop:hover .timeline-dot {
-  transform: scale(1.5);
-  background: #f5f2eb;
+  transform: scale(1.6);
+
+  background: #F4F3EE;
+
+  box-shadow:
+    0 0 0 7px rgba(245, 242, 235, 0.08);
 }
 
-.timeline-stop:hover .timeline-place {
-  transform: translateY(4px);
+.timeline-stop:hover .timeline-content h3 {
+  transform: translateY(-3px);
 }
+
 
 /* =========================
    MOBILE
@@ -155,55 +239,107 @@
 
 @media (max-width: 768px) {
   .journey-timeline {
-    padding: 80px 7%;
+    min-height: auto;
+
+    padding: 90px 7%;
+  }
+
+  .timeline-heading {
+    margin-bottom: 65px;
+  }
+
+  .timeline-heading h2 {
+    font-size: 55px;
+  }
+
+  .timeline-heading > span {
+    max-width: 320px;
+
+    line-height: 1.7;
   }
 
   .timeline {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
 
-    margin-left: 10px;
+    margin-left: 5px;
   }
 
-  .timeline-stop {
-    width: 100%;
 
-    flex-direction: row;
-    align-items: center;
+  /* Vertical line */
 
-    padding: 15px 0;
-  }
+  .timeline::before {
+    top: 10px;
+    bottom: 10px;
 
-  .timeline-stop::before {
-    top: 0;
-    bottom: 0;
-
-    left: 5px;
+    left: 6px;
     right: auto;
 
     width: 1px;
     height: auto;
+
+    transform: scaleY(0);
+    transform-origin: top;
   }
 
-  .timeline-stop:first-child::before,
-  .timeline-stop:last-child::before {
-    left: 5px;
-    right: auto;
+  .timeline-visible .timeline::before {
+    transform: scaleY(1);
   }
 
-  .timeline-number {
-    width: 35px;
-    margin: 0;
+
+  /* Timeline stops */
+
+  .timeline-stop {
+    display: flex;
+
+    padding: 0 0 55px;
+
+    gap: 22px;
+  }
+
+
+  /* Marker */
+
+  .timeline-marker {
+    width: 14px;
+    min-width: 14px;
+
+    height: 20px;
+  }
+
+  .timeline-marker > span {
+    display: none;
   }
 
   .timeline-dot {
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
   }
 
-  .timeline-place {
-    margin: 0 0 0 20px;
 
-    font-size: 22px;
+  /* Content */
+
+  .timeline-content {
+    margin-top: 0;
+  }
+
+  .timeline-content p {
+    margin-bottom: 8px;
+  }
+
+  .timeline-content h3 {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+  }
+
+  .timeline-content > span {
+    max-width: 300px;
+
+    line-height: 1.7;
+  }
+
+  .timeline-stop:last-child {
+    padding-bottom: 0;
   }
 }

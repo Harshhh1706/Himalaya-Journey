@@ -4,29 +4,32 @@
 
 .delhi-section {
   min-height: 90vh;
-  padding: 120px 8%;
+  padding: 120px 10%;
 
-  background: #f5f2eb;
-  color: #171a17;
+  background: #F4F3EE;
+  color: #1B211E;
 }
 
+
 /* =========================
-   INTRO
+   DELHI INTRO
 ========================= */
 
 .delhi-intro {
-  max-width: 700px;
-  margin-bottom: 70px;
+  max-width: 800px;
+  margin: 0 auto 75px;
+
+  text-align: center;
 }
 
 .delhi-intro > p:first-child {
   margin: 0 0 25px;
 
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
 
-  color: #6f7068;
+  color: #53615A;
 }
 
 .delhi-intro h2 {
@@ -43,13 +46,14 @@
 .delhi-intro > p:last-child {
   max-width: 520px;
 
-  margin-top: 30px;
+  margin: 30px auto 0;
 
   font-size: 16px;
   line-height: 1.7;
 
-  color: #6f7068;
+  color: #53615A;
 }
+
 
 /* =========================
    DELHI PLACES
@@ -63,33 +67,135 @@
   border-left: 1px solid #c9c4b8;
 }
 
-.delhi-places div {
+
+/* =========================
+   PLACE CARD
+========================= */
+
+.delhi-place {
   min-height: 150px;
-  padding: 30px;
+
+  padding: 25px 30px;
 
   border-right: 1px solid #c9c4b8;
   border-bottom: 1px solid #c9c4b8;
 
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
+  position: relative;
+  overflow: hidden;
 
   cursor: pointer;
 
   transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    padding-left 0.3s ease;
+    background 0.4s ease,
+    color 0.4s ease,
+    padding-left 0.4s ease;
 }
 
-.delhi-places div:hover {
-  background: #171a17;
-  color: #f5f2eb;
+
+/* =========================
+   NUMBER
+========================= */
+
+.delhi-place-number {
+  font-size: 9px;
+  letter-spacing: 2px;
+
+  opacity: 0.4;
+
+  transition: opacity 0.3s ease;
+}
+
+
+/* =========================
+   PLACE NAME
+========================= */
+
+.delhi-place-name {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 29px;
+  line-height: 1;
+
+  transition:
+    transform 0.4s ease,
+    color 0.4s ease;
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.delhi-place-arrow {
+  position: absolute;
+
+  right: 25px;
+  bottom: 22px;
+
+  font-size: 16px;
+
+  opacity: 0;
+
+  transform: translateX(-8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.delhi-place:hover {
+  background: #ded8ca;
 
   padding-left: 38px;
 }
+
+.delhi-place:hover .delhi-place-number {
+  opacity: 0.7;
+}
+
+.delhi-place:hover .delhi-place-name {
+  transform: translateY(-3px);
+}
+
+.delhi-place:hover .delhi-place-arrow {
+  opacity: 0.7;
+  transform: translateX(0);
+}
+
+
+/* =========================
+   ACTIVE PLACE
+========================= */
+
+.delhi-place-active {
+  background: #1B211E;
+  color: #F4F3EE;
+
+  padding-left: 38px;
+}
+
+.delhi-place-active .delhi-place-number {
+  opacity: 0.55;
+}
+
+.delhi-place-active .delhi-place-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.delhi-place-active:hover {
+  background: #1B211E;
+}
+
 
 /* =========================
    SELECTED STORY
@@ -98,10 +204,12 @@
 .selected-place {
   max-width: 650px;
 
-  margin-top: 50px;
+  margin: 55px auto 0;
   padding: 35px 0 0;
 
-  border-top: 1px solid #171a17;
+  border-top: 1px solid #1B211E;
+
+  text-align: center;
 
   animation: storyOpen 0.5s ease both;
 }
@@ -113,13 +221,14 @@
   letter-spacing: 3px;
   text-transform: uppercase;
 
-  color: #6f7068;
+  color: #53615A;
 }
 
 .selected-place h3 {
   margin: 0 0 15px;
 
   font-family: "Cormorant Garamond", serif;
+
   font-size: 48px;
   font-weight: 500;
   line-height: 1;
@@ -128,13 +237,14 @@
 .selected-place p:last-child {
   max-width: 520px;
 
-  margin: 0;
+  margin: 0 auto;
 
   font-size: 16px;
   line-height: 1.7;
 
-  color: #6f7068;
+  color: #53615A;
 }
+
 
 /* =========================
    STORY ANIMATION
@@ -152,12 +262,39 @@
   }
 }
 
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .delhi-section {
+    padding: 100px 7%;
+  }
+
+  .delhi-intro {
+    margin-bottom: 60px;
+  }
+
+  .delhi-place {
+    padding: 25px;
+  }
+
+  .delhi-place:hover,
+  .delhi-place-active {
+    padding-left: 32px;
+  }
+}
+
+
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 768px) {
   .delhi-section {
+    min-height: auto;
+
     padding: 80px 7%;
   }
 
@@ -171,27 +308,36 @@
   }
 
   .delhi-intro > p:last-child {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 14px;
   }
 
   .delhi-places {
     grid-template-columns: 1fr;
   }
 
-  .delhi-places div {
-    min-height: 100px;
-    padding: 25px 20px;
+  .delhi-place {
+    min-height: 105px;
 
-    font-size: 25px;
+    padding: 22px 20px;
   }
 
-  .delhi-places div:hover {
+  .delhi-place:hover,
+  .delhi-place-active {
     padding-left: 28px;
+  }
+
+  .delhi-place-name {
+    font-size: 27px;
+  }
+
+  .delhi-place-arrow {
+    right: 20px;
+    bottom: 20px;
   }
 
   .selected-place {
     margin-top: 40px;
+    padding-top: 30px;
   }
 
   .selected-place h3 {
@@ -199,6 +345,6 @@
   }
 
   .selected-place p:last-child {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
