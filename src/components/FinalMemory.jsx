@@ -1,7 +1,6 @@
 function FinalMemory() {
   return (
     <section className="final-memory">
-
       <p className="final-memory-label">
         THE LAST MEMORY
       </p>
@@ -12,11 +11,10 @@ function FinalMemory() {
         The mountains stayed.
       </h2>
 
-      <p>
+      <p className="final-memory-text">
         A few days, thousands of kilometres,
         and memories that will probably stay much longer.
       </p>
-
     </section>
   );
 }

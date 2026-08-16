@@ -20,7 +20,7 @@ function Home() {
           <div
             className="route-place"
             onClick={() =>
-              document.getElementById("journey")?.scrollIntoView({
+              document.getElementById("destinations")?.scrollIntoView({
                 behavior: "smooth",
               })
             }

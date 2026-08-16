@@ -190,3 +190,12 @@
 .route-place:hover strong {
   opacity: 0.65;
 }
+.route-line::before {
+  content: "→";
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-55%);
+  font-size: 12px;
+  opacity: 0.5;
+}
