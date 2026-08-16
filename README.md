@@ -1,6 +1,6 @@
 # 🏔️ Himalaya Journey
 
-**Himalaya Journey** is a personal travel website inspired by my journey through the Himalayas.
+**Himalaya Journey** is my personal travel website inspired by my journey through the Himalayas.
 
 This project is based on my **own travel experiences, photographs, and videos**, bringing together the places I visited, moments I captured, and memories from the journey into one interactive website.
 
@@ -51,5 +51,5 @@ npm run dev
 
 ## 👨‍💻 Author
 
-**Harsh**
+**Harshwardhan**
 [GitHub](https://github.com/Harshhh1706)
