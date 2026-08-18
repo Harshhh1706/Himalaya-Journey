@@ -1,20 +1,21 @@
 import heroImage from "../assets/himachal-hero.jpg";
 
-
 function Hero() {
   return (
     <section
       className="hero"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
-
       <div className="hero-content">
-        <p>HIMACHAL PRADESH • 2026</p>
+
+        <p className="hero-label">
+          HIMACHAL PRADESH • 2026
+        </p>
 
         <h1>
-        TALES OF
-        <br/>
-        <span>HIMALAYA</span>
+          TALES OF
+          <br />
+          <span>HIMALAYA</span>
         </h1>
 
         <p>
@@ -24,17 +25,19 @@ function Hero() {
         <button
           onClick={() => {
             document.getElementById("journey").scrollIntoView({
-              behavior: "smooth"
+              behavior: "smooth",
             });
           }}
         >
           EXPLORE JOURNEY
         </button>
+
       </div>
+
       <div className="hero-scroll">
-  <span>SCROLL TO EXPLORE</span>
-  <div className="scroll-line"></div>
-</div>
+        <span>SCROLL TO EXPLORE</span>
+        <div className="scroll-line"></div>
+      </div>
     </section>
   );
 }
