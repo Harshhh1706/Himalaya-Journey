@@ -11,253 +11,254 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
 @import "./styles/footer.css";
 /* =========================================
-   MOUNTAIN DUSK — FINAL COLOR PALETTE
+   WANDER NORTH
+   MIDNIGHT MOUNTAIN THEME
 ========================================= */
 
 
 /* =========================
    JOURNEY INTRO
-   Deep Slate Blue
 ========================= */
 
 .journey-intro {
-    background: #202C36 !important;
-    color: #F2EEE5 !important;
-  }
-  
-  
-  /* =========================
-     DESTINATIONS
-     Slightly lighter blue-gray
-  ========================= */
-  
-  .destinations {
-    background: #293844 !important;
-    color: #F2EEE5 !important;
-  }
-  
-  
-  /* =========================
-     DESTINATION CARDS
-  ========================= */
-  
-  .destination-card {
-    background: #354651 !important;
-    color: #F2EEE5 !important;
-  
-    border: 1px solid rgba(242, 238, 229, 0.10);
-  }
-  
-  .destination-card h3 {
-    color: #F2EEE5 !important;
-  }
-  
-  .destination-card p {
-    color: #B7C1C6 !important;
-  }
-  
-  .destination-card span {
-    color: #9AAAB3 !important;
-  }
-  
-  .destination-card:hover {
-    background: #40525E !important;
-  
-    box-shadow:
-      0 20px 45px rgba(0, 0, 0, 0.28);
-  }
-  
-  
-  /* =========================
-     HAMPTA
-     Cold Stone
-  ========================= */
-  
-  .hampta-section {
-    background: #303D45 !important;
-    color: #F2EEE5 !important;
-  }
-  
-  
-  /* =========================
-     CHANDRATAL
-     Blue Mountain Shade
-  ========================= */
-  
-  .chandratal-section {
-    background: #354852 !important;
-    color: #F2EEE5 !important;
-  }
-  
-  .chandratal-location {
-    color: #8EAFBF !important;
-  }
-  
-  
-  /* =========================
-     MANALI
-     Warm Slate
-  ========================= */
-  
-  .manali-section {
-    background: #39454A !important;
-    color: #F2EEE5 !important;
-  }
-  
-  
-  /* =========================
-     DELHI
-     Return to Deep Slate
-  ========================= */
-  
-  .delhi-section {
-    background: #252F37 !important;
-    color: #F2EEE5 !important;
-  }
-  
-  
-  /* =========================
-     TRAVEL QUOTE
-     Quiet Dark Blue
-  ========================= */
-  
-  .travel-quote {
-    background: #1D2830 !important;
-    color: #F2EEE5 !important;
-  }
-  
-  .travel-quote p {
-    color: #E5E3DC !important;
-  }
-  
-  
-  /* =========================
-     THE WAY HOME
-     Deep Midnight Blue
-  ========================= */
-  
-  .journey-timeline {
-    background: #17222A !important;
-    color: #F2EEE5 !important;
-  }
-  
-  
-  /* =========================
-     FINAL MEMORY
-     Almost Midnight
-  ========================= */
-  
-  .final-memory {
-    background: #111A21 !important;
-    color: #F2EEE5 !important;
-  }
-  
-  
-  /* =========================
-     FOOTER
-     Darkest Ending
-  ========================= */
-  
-  .site-footer {
-    background: #0C141A !important;
-    color: #F2EEE5 !important;
-  }
-  
-  
-  /* =========================
-     MUTED TEXT
-  ========================= */
-  
-  .journey-description,
-  .destination-card p,
-  .hampta-story,
-  .chandratal-story,
-  .manali-story,
-  .delhi-intro > p:last-child,
-  .selected-place p:last-child {
-    color: #AEBBC2 !important;
-  }
-  
-  
-  /* =========================
-     SMALL LABELS
-  ========================= */
-  
-  .journey-label,
-  .hampta-tag,
-  .chandratal-chapter,
-  .manali-chapter,
-  .delhi-intro > p:first-child,
-  .final-memory-label {
-    color: #91A5AF !important;
-  }
-  
-  
-  /* =========================
-     WARM TERRACOTTA ACCENT
-  ========================= */
-  
-  .route-dot {
-    border-color: #C17C62 !important;
-  }
-  
-  .route-place:hover .route-dot {
-    background: #C17C62 !important;
-    border-color: #C17C62 !important;
-  }
-  
-  
-  /* =========================
-     TIMELINE ACCENT
-  ========================= */
-  
-  .timeline-dot {
-    border-color: #C17C62 !important;
-  }
-  
-  .timeline-stop:hover .timeline-dot {
-    background: #C17C62 !important;
-    border-color: #C17C62 !important;
-  
-    box-shadow:
-      0 0 0 7px rgba(193, 124, 98, 0.14);
-  }
-  
-  
-  /* =========================
-     DELHI ACTIVE
-  ========================= */
-  
-  .delhi-place-active {
-    background: #17222A !important;
-    color: #F2EEE5 !important;
-  }
-  
-  .delhi-place:hover {
-    background: #354651 !important;
-  }
-  
-  .delhi-place-active:hover {
-    background: #17222A !important;
-  }
-  
-  
-  /* =========================
-     DIVIDERS
-  ========================= */
-  
-  .hampta-divider,
-  .chandratal-divider,
-  .manali-divider {
-    background: #91A5AF !important;
-  }
-  
-  
-  /* =========================
-     FOOTER DETAILS
-  ========================= */
-  
-  .footer-brand small,
-  .footer-message {
-    color: #788993 !important;
-  }
+  background: #182631 !important;
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   DESTINATIONS
+========================= */
+
+.destinations {
+  background: #111B24 !important;
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   DESTINATION CARDS
+========================= */
+
+.destination-card {
+  background: #20333F !important;
+  color: #F1EDE3 !important;
+
+  border: 1px solid rgba(241, 237, 227, 0.12);
+}
+
+.destination-card h3 {
+  color: #F1EDE3 !important;
+}
+
+.destination-card p {
+  color: #B9B5AA !important;
+}
+
+.destination-card span {
+  color: #9BA9B0 !important;
+}
+
+.destination-card:hover {
+  background: #294451 !important;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   HAMPTA
+========================= */
+
+.hampta-section {
+  background: #20333F !important;
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   CHANDRATAL
+========================= */
+
+.chandratal-section {
+  background: #294451 !important;
+  color: #F1EDE3 !important;
+}
+
+.chandratal-location {
+  color: #9BB7C3 !important;
+}
+
+
+/* =========================
+   MANALI
+========================= */
+
+.manali-section {
+  background: #182631 !important;
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   DELHI
+========================= */
+
+.delhi-section {
+  background: #111B24 !important;
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   TRAVEL QUOTE
+========================= */
+
+.travel-quote {
+  background: #182631 !important;
+  color: #F1EDE3 !important;
+}
+
+.travel-quote p {
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   THE WAY HOME
+========================= */
+
+.journey-timeline {
+  background: #20333F !important;
+  color: #F1EDE3 !important;
+}
+
+.timeline-heading p,
+.timeline-heading > span,
+.timeline-content p,
+.timeline-content > span {
+  color: #A8B4B9 !important;
+}
+
+.timeline-content h3 {
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   FINAL MEMORY
+========================= */
+
+.final-memory {
+  background: #111B24 !important;
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+  background: #0C1218 !important;
+  color: #F1EDE3 !important;
+}
+
+
+/* =========================
+   MUTED TEXT
+========================= */
+
+.journey-description,
+.destination-card p,
+.hampta-story,
+.chandratal-story,
+.manali-story,
+.delhi-intro > p:last-child,
+.selected-place p:last-child {
+  color: #B9B5AA !important;
+}
+
+
+/* =========================
+   SMALL LABELS
+========================= */
+
+.journey-label,
+.chandratal-chapter,
+.manali-chapter,
+.delhi-intro > p:first-child,
+.final-memory-label {
+  color: #9BA9B0 !important;
+}
+
+
+/* =========================
+   BURNT ORANGE ACCENT
+========================= */
+
+.route-dot {
+  border-color: #C47758 !important;
+}
+
+.route-place:hover .route-dot {
+  background: #C47758 !important;
+  border-color: #C47758 !important;
+}
+
+
+/* =========================
+   TIMELINE ACCENT
+========================= */
+
+.timeline-dot {
+  border-color: #C47758 !important;
+}
+
+.timeline-stop:hover .timeline-dot {
+  background: #C47758 !important;
+  border-color: #C47758 !important;
+
+  box-shadow:
+    0 0 0 7px rgba(196, 119, 88, 0.15);
+}
+
+
+/* =========================
+   DELHI ACTIVE
+========================= */
+
+.delhi-place-active {
+  background: #20333F !important;
+  color: #F1EDE3 !important;
+}
+
+.delhi-place:hover {
+  background: #294451 !important;
+}
+
+.delhi-place-active:hover {
+  background: #20333F !important;
+}
+
+
+/* =========================
+   DIVIDERS
+========================= */
+
+.hampta-divider,
+.chandratal-divider,
+.manali-divider {
+  background: rgba(241, 237, 227, 0.3) !important;
+}
+
+
+/* =========================
+   FOOTER DETAILS
+========================= */
+
+.footer-brand small,
+.footer-message {
+  color: #8999A1 !important;
+}

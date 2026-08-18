@@ -36,7 +36,7 @@ function FinalMemory() {
       <h2>
         The journey ended.
         <br />
-        <em>The mountains stayed.</em>
+        <em>The Mountains stayed.</em>
       </h2>
 
       <p className="final-memory-text">
