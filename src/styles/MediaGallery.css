@@ -1,0 +1,309 @@
+/* =========================
+   MEDIA GALLERY
+========================= */
+
+.media-gallery {
+    position: fixed;
+    inset: 0;
+  
+    z-index: 9999;
+  
+    background:
+      rgba(10, 16, 21, 0.97);
+  
+    color: #F1EDE3;
+  
+    display: flex;
+    flex-direction: column;
+  
+    justify-content: center;
+  
+    padding: 40px 6%;
+  }
+  
+  
+  /* =========================
+     CLOSE
+  ========================= */
+  
+  .media-close {
+    position: absolute;
+  
+    top: 25px;
+    right: 35px;
+  
+    width: 45px;
+    height: 45px;
+  
+    border: 1px solid
+      rgba(241, 237, 227, 0.3);
+  
+    background: transparent;
+  
+    color: #F1EDE3;
+  
+    font-size: 30px;
+  
+    cursor: pointer;
+  
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
+  }
+  
+  .media-close:hover {
+    background: #F1EDE3;
+    color: #111B24;
+  }
+  
+  
+  /* =========================
+     HEADING
+  ========================= */
+  
+  .media-heading {
+    position: absolute;
+  
+    top: 35px;
+    left: 6%;
+  }
+  
+  .media-heading span {
+    display: block;
+  
+    font-size: 9px;
+  
+    letter-spacing: 3px;
+  
+    color: #C47758;
+  }
+  
+  .media-heading h2 {
+    margin: 7px 0 2px;
+  
+    font-family:
+      "Cormorant Garamond",
+      serif;
+  
+    font-size: 38px;
+  
+    font-weight: 500;
+  }
+  
+  .media-heading p {
+    margin: 0;
+  
+    font-size: 10px;
+  
+    letter-spacing: 2px;
+  
+    color: #8F9BA1;
+  }
+  
+  
+  /* =========================
+     VIEWER
+  ========================= */
+  
+  .media-viewer {
+    width: 100%;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 35px;
+  }
+  
+  
+  /* =========================
+     MEDIA
+  ========================= */
+  
+  .media-content {
+    width: min(75vw, 1100px);
+  
+    height: 70vh;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    overflow: hidden;
+  }
+  
+  .media-content img,
+  .media-content video {
+    width: 100%;
+    height: 100%;
+  
+    object-fit: contain;
+  
+    border-radius: 3px;
+  }
+  
+  
+  /* =========================
+     ARROWS
+  ========================= */
+  
+  .media-arrow {
+    width: 50px;
+    height: 50px;
+  
+    flex-shrink: 0;
+  
+    border: 1px solid
+      rgba(241, 237, 227, 0.3);
+  
+    background: transparent;
+  
+    color: #F1EDE3;
+  
+    font-size: 22px;
+  
+    cursor: pointer;
+  
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+  .media-arrow:hover {
+    background: #F1EDE3;
+  
+    color: #111B24;
+  
+    transform: scale(1.05);
+  }
+  
+  
+  /* =========================
+     FOOTER
+  ========================= */
+  
+  .media-footer {
+    position: absolute;
+  
+    bottom: 30px;
+  
+    left: 6%;
+    right: 6%;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: space-between;
+  }
+  
+  .media-footer > span {
+    font-size: 9px;
+  
+    letter-spacing: 3px;
+  
+    color: #8F9BA1;
+  }
+  
+  
+  /* =========================
+     PROGRESS
+  ========================= */
+  
+  .media-progress {
+    display: flex;
+  
+    gap: 6px;
+  
+    max-width: 60%;
+  
+    overflow-x: auto;
+  }
+  
+  .media-progress button {
+    width: 25px;
+    height: 2px;
+  
+    padding: 0;
+  
+    border: none;
+  
+    background:
+      rgba(241, 237, 227, 0.25);
+  
+    cursor: pointer;
+  
+    flex-shrink: 0;
+  
+    transition:
+      background 0.3s ease,
+      width 0.3s ease;
+  }
+  
+  .media-progress button.active {
+    background: #C47758;
+  
+    width: 40px;
+  }
+  
+  
+  /* =========================
+     MOBILE
+  ========================= */
+  
+  @media (max-width: 768px) {
+  
+    .media-gallery {
+      padding: 20px;
+    }
+  
+    .media-heading {
+      top: 20px;
+      left: 20px;
+    }
+  
+    .media-heading h2 {
+      font-size: 30px;
+    }
+  
+    .media-close {
+      top: 18px;
+      right: 18px;
+  
+      width: 40px;
+      height: 40px;
+  
+      font-size: 25px;
+    }
+  
+    .media-viewer {
+      gap: 8px;
+    }
+  
+    .media-content {
+      width: 82vw;
+      height: 65vh;
+    }
+  
+    .media-arrow {
+      width: 38px;
+      height: 38px;
+  
+      font-size: 18px;
+    }
+  
+    .media-footer {
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+  
+    .media-progress {
+      max-width: 55%;
+    }
+  }

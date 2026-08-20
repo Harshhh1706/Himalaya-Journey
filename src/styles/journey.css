@@ -82,6 +82,7 @@
 
   position: relative;
   overflow: hidden;
+  
 }
 
 .route-line::after {
@@ -142,6 +143,7 @@
   .route-line {
     width: 1px;
     height: 45px;
+    
   }
 
   .route-line::after {
