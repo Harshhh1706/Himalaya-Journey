@@ -1,10 +1,16 @@
+import { useState } from "react";
+
 import DestinationCard from "../components/DestinationCard";
+import MediaGallery from "../components/MediaGallery";
+
 import chandratal from "../assets/chandratal.jpeg";
 import hampta from "../assets/hampta.png";
 import manali from "../assets/manali.png";
 import delhi from "../assets/delhi.png";
 
 function Home() {
+  const [selectedDestination, setSelectedDestination] = useState(null);
+
   return (
     <>
       {/* Journey Route */}
@@ -71,7 +77,11 @@ function Home() {
 
       </section>
 
-      {/* Destination Cards */}
+
+      {/* =========================
+          DESTINATION CARDS
+      ========================= */}
+
       <section id="destinations" className="destinations">
 
         <DestinationCard
@@ -79,6 +89,7 @@ function Home() {
           description="Four days of trekking through the Himalayas."
           image={hampta}
           tag="THE MAIN TRAIL"
+          onClick={() => setSelectedDestination("Hampta")}
         />
 
         <DestinationCard
@@ -86,6 +97,7 @@ function Home() {
           description="A day at the beautiful Moon Lake."
           image={chandratal}
           tag="DAY 05"
+          onClick={() => setSelectedDestination("Chandratal")}
         />
 
         <DestinationCard
@@ -93,6 +105,7 @@ function Home() {
           description="Two days of exploring the mountains and streets."
           image={manali}
           tag="TWO DAYS"
+          onClick={() => setSelectedDestination("Manali")}
         />
 
         <DestinationCard
@@ -100,17 +113,33 @@ function Home() {
           description="One day of exploring Delhi before heading back home."
           image={delhi}
           tag="ONE DAY"
+          onClick={() => setSelectedDestination("Delhi")}
         />
 
       </section>
 
-      {/* Travel Quote */}
+
+      {/* =========================
+          TRAVEL QUOTE
+      ========================= */}
+
       <section className="travel-quote">
         <p>
           "Some journeys are remembered not for where they take you,
           but for everything you experience along the way."
         </p>
       </section>
+
+
+      {/* =========================
+          MEDIA GALLERY
+      ========================= */}
+
+      <MediaGallery
+        destination={selectedDestination}
+        onClose={() => setSelectedDestination(null)}
+      />
+
     </>
   );
 }
