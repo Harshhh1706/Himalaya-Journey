@@ -14,7 +14,9 @@ function Hero() {
       }}
     >
 
-      {/* Hero content */}
+      {/* =========================
+          HERO CONTENT
+      ========================= */}
 
       <div className="hero-content">
 
@@ -37,7 +39,7 @@ function Hero() {
           onClick={() => {
             document
               .getElementById("journey")
-              .scrollIntoView({
+              ?.scrollIntoView({
                 behavior: "smooth",
               });
           }}
@@ -54,19 +56,47 @@ function Hero() {
 
       <div className="hero-destination-cards">
 
+
+        {/* =========================
+            HAMPTA
+        ========================= */}
+
         <button
           className="hero-destination-card hero-card-hampta"
           onClick={() =>
             setSelectedDestination("Hampta")
           }
         >
-          <span>01</span>
 
-          <strong>HAMPTA PASS</strong>
+          <img
+            src="/hero-cards/hampta-card.jpg"
+            alt="Hampta Pass"
+          />
 
-          <small>VIEW STORY →</small>
+          <div className="hero-card-overlay"></div>
+
+          <div className="hero-card-content">
+
+            <span>01</span>
+
+            <strong>
+              HAMPTA
+              <br />
+              PASS
+            </strong>
+
+            <small>
+              VIEW STORY →
+            </small>
+
+          </div>
+
         </button>
 
+
+        {/* =========================
+            CHANDRATAL
+        ========================= */}
 
         <button
           className="hero-destination-card hero-card-chandratal"
@@ -74,13 +104,36 @@ function Hero() {
             setSelectedDestination("Chandratal")
           }
         >
-          <span>02</span>
 
-          <strong>CHANDRATAL</strong>
+          <img
+            src="/hero-cards/chandratal-card.jpg"
+            alt="Chandratal Lake"
+          />
 
-          <small>VIEW STORY →</small>
+          <div className="hero-card-overlay"></div>
+
+          <div className="hero-card-content">
+
+            <span>02</span>
+
+            <strong>
+              CHANDRATAL
+              <br />
+              LAKE
+            </strong>
+
+            <small>
+              VIEW STORY →
+            </small>
+
+          </div>
+
         </button>
 
+
+        {/* =========================
+            MANALI
+        ========================= */}
 
         <button
           className="hero-destination-card hero-card-manali"
@@ -88,13 +141,36 @@ function Hero() {
             setSelectedDestination("Manali")
           }
         >
-          <span>03</span>
 
-          <strong>MANALI</strong>
+          <img
+            src="/hero-cards/manali-card.jpg"
+            alt="Manali"
+          />
 
-          <small>VIEW STORY →</small>
+          <div className="hero-card-overlay"></div>
+
+          <div className="hero-card-content">
+
+            <span>03</span>
+
+            <strong>
+              MANALI
+              <br />
+              DIARIES
+            </strong>
+
+            <small>
+              VIEW STORY →
+            </small>
+
+          </div>
+
         </button>
 
+
+        {/* =========================
+            DELHI
+        ========================= */}
 
         <button
           className="hero-destination-card hero-card-delhi"
@@ -102,21 +178,44 @@ function Hero() {
             setSelectedDestination("Delhi")
           }
         >
-          <span>04</span>
 
-          <strong>DELHI</strong>
+          <img
+            src="/hero-cards/delhi-card.jpg"
+            alt="Delhi"
+          />
 
-          <small>VIEW STORY →</small>
+          <div className="hero-card-overlay"></div>
+
+          <div className="hero-card-content">
+
+            <span>04</span>
+
+            <strong>
+              DELHI
+              <br />
+              STORIES
+            </strong>
+
+            <small>
+              VIEW STORY →
+            </small>
+
+          </div>
+
         </button>
 
       </div>
 
 
-      {/* Scroll */}
+      {/* =========================
+          SCROLL INDICATOR
+      ========================= */}
 
       <div className="hero-scroll">
 
-        <span>SCROLL TO EXPLORE</span>
+        <span>
+          SCROLL TO EXPLORE
+        </span>
 
         <div className="scroll-line"></div>
 
