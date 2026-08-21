@@ -313,11 +313,11 @@
 .hero-destination-cards {
   position: absolute;
 
-  right: 7%;
-  bottom: 12%;
+  right: 6%;
+  bottom: 11%;
 
-  width: 480px;
-  height: 260px;
+  width: 500px;
+  height: 290px;
 
   z-index: 4;
 
@@ -332,121 +332,132 @@
 .hero-destination-card {
   position: absolute;
 
-  width: 185px;
-  height: 125px;
+  width: 205px;
+  height: 135px;
 
   padding: 18px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
 
   text-align: left;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 
-  border-radius: 4px;
+  border-radius: 7px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(32, 51, 63, 0.92),
-      rgba(17, 27, 36, 0.94)
+      rgba(27, 43, 52, 0.94),
+      rgba(8, 17, 22, 0.96)
     );
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
 
-  color: #F1EDE3;
+  color: #f1ede3;
 
   cursor: pointer;
 
   pointer-events: auto;
 
   box-shadow:
-    0 15px 35px
-    rgba(0, 0, 0, 0.35);
+    0 22px 50px rgba(0, 0, 0, 0.45);
 
   transition:
-    transform 0.4s ease,
-    background 0.4s ease,
-    box-shadow 0.4s ease;
+    transform 0.45s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.45s ease,
+    background 0.45s ease;
 }
 
 
-/* Number */
+/* =========================
+   NUMBER
+========================= */
 
 .hero-destination-card span {
   font-size: 9px;
 
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 
-  color: #C47758;
+  color: #c47758;
 }
 
 
-/* Name */
+/* =========================
+   DESTINATION NAME
+========================= */
 
 .hero-destination-card strong {
   font-family:
     "Cormorant Garamond",
     serif;
 
-  font-size: 25px;
+  font-size: 29px;
 
   font-weight: 500;
 
-  line-height: 1;
+  line-height: 0.9;
+
+  letter-spacing: 0.5px;
 }
 
 
-/* View */
+/* =========================
+   VIEW STORY
+========================= */
 
 .hero-destination-card small {
   font-size: 8px;
 
   letter-spacing: 2px;
 
-  color: #AAB4B9;
+  color: rgba(241, 237, 227, 0.65);
 }
 
 
 /* =========================
-   CARD POSITIONS
+   OVERLAPPING POSITIONS
 ========================= */
 
 .hero-card-hampta {
   top: 0;
   left: 0;
 
-  transform:
-    rotate(-4deg);
+  transform: rotate(-6deg);
+
+  z-index: 1;
 }
+
 
 .hero-card-chandratal {
-  top: 45px;
+  top: 35px;
   left: 145px;
 
-  transform:
-    rotate(2deg);
+  transform: rotate(3deg);
+
+  z-index: 3;
 }
+
 
 .hero-card-manali {
-  top: 120px;
-  left: 25px;
+  top: 145px;
+  left: 35px;
 
-  transform:
-    rotate(3deg);
+  transform: rotate(4deg);
+
+  z-index: 4;
 }
 
+
 .hero-card-delhi {
-  top: 135px;
+  top: 150px;
   left: 225px;
 
-  transform:
-    rotate(-3deg);
+  transform: rotate(-4deg);
+
+  z-index: 2;
 }
 
 
@@ -455,51 +466,149 @@
 ========================= */
 
 .hero-destination-card:hover {
-  z-index: 10;
-
   background:
     linear-gradient(
       145deg,
-      rgba(41, 68, 81, 0.97),
-      rgba(17, 27, 36, 0.97)
+      rgba(45, 67, 77, 0.98),
+      rgba(8, 17, 22, 0.98)
     );
 
   box-shadow:
-    0 25px 50px
-    rgba(0, 0, 0, 0.5);
+    0 35px 75px rgba(0, 0, 0, 0.62);
 }
 
 
-/* Individual hover */
+/* =========================
+   INDIVIDUAL HOVER
+========================= */
 
 .hero-card-hampta:hover {
   transform:
-    rotate(-4deg)
-    translateY(-12px)
-    scale(1.04);
+    rotate(-6deg)
+    translateY(-18px)
+    scale(1.06);
+
+  z-index: 20;
 }
+
 
 .hero-card-chandratal:hover {
   transform:
-    rotate(2deg)
-    translateY(-12px)
-    scale(1.04);
+    rotate(3deg)
+    translateY(-18px)
+    scale(1.06);
+
+  z-index: 20;
 }
+
 
 .hero-card-manali:hover {
   transform:
-    rotate(3deg)
-    translateY(-12px)
-    scale(1.04);
+    rotate(4deg)
+    translateY(-18px)
+    scale(1.06);
+
+  z-index: 20;
 }
+
 
 .hero-card-delhi:hover {
   transform:
-    rotate(-3deg)
-    translateY(-12px)
-    scale(1.04);
+    rotate(-4deg)
+    translateY(-18px)
+    scale(1.06);
+
+  z-index: 20;
 }
 
+
+/* =========================
+   CARD ACCENT
+========================= */
+
+.hero-destination-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18px;
+  bottom: 13px;
+
+  width: 0;
+  height: 2px;
+
+  background: #c47758;
+
+  transition: width 0.35s ease;
+}
+
+
+.hero-destination-card:hover::after {
+  width: 38px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-destination-cards {
+    right: 3%;
+
+    bottom: 7%;
+
+    width: 350px;
+    height: 220px;
+
+    transform: scale(0.82);
+
+    transform-origin: bottom right;
+  }
+
+
+  .hero-destination-card {
+    width: 165px;
+    height: 105px;
+
+    padding: 14px;
+  }
+
+
+  .hero-destination-card strong {
+    font-size: 22px;
+  }
+
+
+  .hero-destination-card small {
+    font-size: 7px;
+  }
+
+
+  .hero-card-hampta {
+    top: 0;
+    left: 0;
+  }
+
+
+  .hero-card-chandratal {
+    top: 25px;
+    left: 110px;
+  }
+
+
+  .hero-card-manali {
+    top: 105px;
+    left: 20px;
+  }
+
+
+  .hero-card-delhi {
+    top: 110px;
+    left: 130px;
+  }
+}
 
 /* =========================
    MOBILE
