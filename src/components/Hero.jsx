@@ -210,17 +210,20 @@ function Hero() {
       {/* =========================
           SCROLL INDICATOR
       ========================= */}
+       <button
+       className="hero-scroll"
+       onClick={() => {
+         document.getElementById("journey")?.scrollIntoView({
+          behavior: "smooth",
+         });
+       }}
+       aria-label="Scroll to explore journey"
+       >
+       <span>SCROLL TO EXPLORE</span>
 
-      <div className="hero-scroll">
-
-        <span>
-          SCROLL TO EXPLORE
-        </span>
-
-        <div className="scroll-line"></div>
-
-      </div>
-
+       <div className="scroll-line"></div>
+       </button>
+ 
 
       {/* =========================
           MEDIA GALLERY
