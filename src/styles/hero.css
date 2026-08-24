@@ -307,17 +307,17 @@
   }
 }
 /* =================================================
-   DESTINATION CARDS — CLEAN VERTICAL COLUMN
+   DESTINATION CARDS — LARGER & CLOSER
 ================================================= */
 
 .hero-destination-cards {
   position: absolute;
 
-  right: 3%;
+  right: 2.5%;
   top: 50%;
 
-  width: 225px;
-  height: 560px;
+  width: 250px;
+  height: 570px;
 
   transform: translateY(-50%);
 
@@ -327,15 +327,13 @@
 }
 
 
-/* =================================================
-   CARD
-================================================= */
+/* CARD */
 
 .hero-destination-card {
   position: absolute;
 
-  width: 205px;
-  height: 115px;
+  width: 225px;
+  height: 125px;
 
   padding: 0;
 
@@ -351,11 +349,10 @@
   -webkit-appearance: none;
 
   cursor: pointer;
-
   pointer-events: auto;
 
   box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.25);
+    0 9px 24px rgba(0, 0, 0, 0.27);
 
   transition:
     transform 0.3s ease,
@@ -363,9 +360,7 @@
 }
 
 
-/* =================================================
-   CARD IMAGE
-================================================= */
+/* IMAGE */
 
 .hero-destination-card img {
   position: absolute;
@@ -383,9 +378,7 @@
 }
 
 
-/* =================================================
-   DARK IMAGE OVERLAY
-================================================= */
+/* DARK OVERLAY */
 
 .hero-card-overlay {
   position: absolute;
@@ -403,9 +396,7 @@
 }
 
 
-/* =================================================
-   CARD CONTENT
-================================================= */
+/* CONTENT */
 
 .hero-card-content {
   position: absolute;
@@ -416,7 +407,7 @@
 
   box-sizing: border-box;
 
-  padding: 13px 15px;
+  padding: 14px 17px;
 
   display: flex;
 
@@ -430,12 +421,12 @@
 }
 
 
-/* Number */
+/* NUMBER */
 
 .hero-card-content span {
   font-family: Arial, sans-serif;
 
-  font-size: 8px;
+  font-size: 9px;
 
   font-weight: 700;
 
@@ -445,7 +436,7 @@
 }
 
 
-/* Destination name */
+/* TITLE */
 
 .hero-card-content strong {
   font-family:
@@ -453,7 +444,7 @@
     Georgia,
     serif;
 
-  font-size: 26px;
+  font-size: 29px;
 
   line-height: 0.9;
 
@@ -466,12 +457,12 @@
 }
 
 
-/* View story */
+/* VIEW STORY */
 
 .hero-card-content small {
   font-family: Arial, sans-serif;
 
-  font-size: 7px;
+  font-size: 8px;
 
   font-weight: 600;
 
@@ -482,12 +473,11 @@
 
 
 /* =================================================
-   FOUR CARDS — ONE COLUMN
+   ONE COLUMN — SMALL GAP
 ================================================= */
 
 .hero-card-hampta {
   top: 0;
-
   left: 0;
 
   transform: rotate(-0.3deg);
@@ -497,8 +487,7 @@
 
 
 .hero-card-chandratal {
-  top: 135px;
-
+  top: 132px;
   left: 0;
 
   transform: rotate(0.3deg);
@@ -508,8 +497,7 @@
 
 
 .hero-card-manali {
-  top: 270px;
-
+  top: 264px;
   left: 0;
 
   transform: rotate(-0.3deg);
@@ -519,8 +507,7 @@
 
 
 .hero-card-delhi {
-  top: 405px;
-
+  top: 396px;
   left: 0;
 
   transform: rotate(0.3deg);
@@ -530,25 +517,25 @@
 
 
 /* =================================================
-   VERY SMALL HOVER
+   SUBTLE HOVER
 ================================================= */
 
 .hero-destination-card:hover {
   transform:
-    translateX(-6px)
+    translateX(-7px)
     translateY(-2px)
     rotate(0deg)
-    scale(1.015);
+    scale(1.02);
 
   box-shadow:
-    0 14px 28px rgba(0, 0, 0, 0.32);
+    0 15px 30px rgba(0, 0, 0, 0.35);
 
   z-index: 20;
 }
 
 
 .hero-destination-card:hover img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 
@@ -564,62 +551,52 @@
     top: auto;
     bottom: 4%;
 
-    width: 170px;
+    width: 180px;
     height: 310px;
 
     transform: none;
   }
 
-
   .hero-destination-card {
-    width: 150px;
-    height: 68px;
+    width: 160px;
+    height: 72px;
 
     border-radius: 6px;
   }
 
-
   .hero-card-content {
-    padding: 7px 10px;
+    padding: 8px 11px;
   }
-
 
   .hero-card-content strong {
-    font-size: 18px;
+    font-size: 19px;
   }
-
 
   .hero-card-content span {
     font-size: 6px;
   }
 
-
   .hero-card-content small {
     font-size: 5px;
   }
-
 
   .hero-card-hampta {
     top: 0;
     left: 0;
   }
 
-
   .hero-card-chandratal {
-    top: 76px;
+    top: 78px;
     left: 0;
   }
-
 
   .hero-card-manali {
-    top: 152px;
+    top: 156px;
     left: 0;
   }
-
 
   .hero-card-delhi {
-    top: 228px;
+    top: 234px;
     left: 0;
   }
-
 }
