@@ -62,118 +62,166 @@ const mediaFolders = {
     "/media/manali/StorySaver.net-meadityajadhav-Video-1783096590991.mp4",
     "/media/manali/StorySaver.net-meadityajadhav-Video-1783096596888.mp4",
   ],
-
-  Delhi: [
-    "/media/delhi/h264_video_20260711_180408.mp4",
-    "/media/delhi/IMG_20260701_122436.jpg",
-    "/media/delhi/IMG_20260702_105040.jpg",
-    "/media/delhi/IMG_20260702_105410.jpg",
-    "/media/delhi/IMG_20260702_110149.jpg",
-    "/media/delhi/IMG_20260702_120953.jpg",
-    "/media/delhi/Snapchat-1534466553.jpg",
-    "/media/delhi/Snapchat-1729697265.jpg",
-    "/media/delhi/Snapchat-1860240497.jpg",
-    "/media/delhi/Snapchat-1877464478.jpg",
-    "/media/delhi/Snapchat-1931443824.jpg",
-    "/media/delhi/Snapchat-2015690452.jpg",
-    "/media/delhi/Snapchat-2071327019.jpg",
-    "/media/delhi/Snapchat-2092906460.jpg",
-    "/media/delhi/Snapchat-304472786.jpg",
-    "/media/delhi/Snapchat-499529389.jpg",
-    "/media/delhi/Snapchat-600987075.jpg",
-    "/media/delhi/Snapchat-939817283.jpg",
-    "/media/delhi/Snapchat-972272913.jpg",
-    "/media/delhi/Snapchat-980802715.jpg",
-  ],
 };
 
-function MediaGallery({ destination, onClose }) {
+function MediaGallery({
+  destination,
+  files,
+  onClose,
+}) {
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const files = mediaFolders[destination] || [];
+  /*
+    If Delhi gives us files,
+    use those files.
+
+    Otherwise use the normal
+    Hampta / Chandratal / Manali list.
+  */
+
+  const media =
+    files && files.length > 0
+      ? files
+      : mediaFolders[destination] || [];
+
 
   useEffect(() => {
     setCurrentIndex(0);
-  }, [destination]);
+  }, [destination, files]);
+
 
   useEffect(() => {
-    document.body.style.overflow = destination ? "hidden" : "";
+
+    if (destination) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
     return () => {
       document.body.style.overflow = "";
     };
+
   }, [destination]);
 
-  if (!destination || files.length === 0) {
+
+  if (!destination || media.length === 0) {
     return null;
   }
 
-  const currentFile = files[currentIndex];
 
-  const isVideo = /\.(mp4|mov|webm)$/i.test(currentFile);
+  const currentFile = media[currentIndex];
+
+  const isVideo =
+    /\.(mp4|mov|webm)$/i.test(currentFile);
+
 
   const nextMedia = () => {
-    setCurrentIndex((prev) =>
-      prev === files.length - 1 ? 0 : prev + 1
-    );
+
+    setCurrentIndex((prev) => {
+
+      if (prev >= media.length - 1) {
+        return 0;
+      }
+
+      return prev + 1;
+
+    });
+
   };
+
 
   const previousMedia = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? files.length - 1 : prev - 1
-    );
+
+    setCurrentIndex((prev) => {
+
+      if (prev <= 0) {
+        return media.length - 1;
+      }
+
+      return prev - 1;
+
+    });
+
   };
 
+
   return (
+
     <div className="media-gallery">
+
+
+      {/* CLOSE */}
 
       <button
         className="media-close"
+        type="button"
         onClick={onClose}
-        aria-label="Close gallery"
       >
         ×
       </button>
 
-      <div className="media-heading">
-        <span>HIMALAYAN JOURNEY</span>
 
-        <h2>{destination}</h2>
+      {/* HEADING */}
+
+      <div className="media-heading">
+
+        <span>
+          DELHI · ONE DAY
+        </span>
+
+        <h2>
+          {destination}
+        </h2>
 
         <p>
-          {currentIndex + 1} / {files.length}
+          {currentIndex + 1} / {media.length}
         </p>
+
       </div>
+
+
+      {/* VIEWER */}
 
       <div className="media-viewer">
 
         <button
           className="media-arrow"
+          type="button"
           onClick={previousMedia}
         >
           ←
         </button>
 
+
         <div className="media-content">
 
           {isVideo ? (
+
             <video
               key={currentFile}
               src={currentFile}
               controls
               playsInline
             />
+
           ) : (
+
             <img
+              key={currentFile}
               src={currentFile}
               alt={`${destination} ${currentIndex + 1}`}
             />
+
           )}
 
         </div>
 
+
         <button
           className="media-arrow"
+          type="button"
           onClick={nextMedia}
         >
           →
@@ -181,25 +229,33 @@ function MediaGallery({ destination, onClose }) {
 
       </div>
 
+
+      {/* FOOTER */}
+
       <div className="media-footer">
 
         <span>
           {isVideo ? "VIDEO" : "PHOTOGRAPH"}
         </span>
 
+
         <div className="media-progress">
 
-          {files.map((_, index) => (
+          {media.map((_, index) => (
+
             <button
               key={index}
+              type="button"
               className={
                 index === currentIndex
                   ? "active"
                   : ""
               }
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Open media ${index + 1}`}
+              onClick={() =>
+                setCurrentIndex(index)
+              }
             />
+
           ))}
 
         </div>
@@ -207,6 +263,7 @@ function MediaGallery({ destination, onClose }) {
       </div>
 
     </div>
+
   );
 }
 

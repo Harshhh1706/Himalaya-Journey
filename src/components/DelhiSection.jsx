@@ -1,29 +1,75 @@
 import { useState } from "react";
+import MediaGallery from "./MediaGallery";
 
-const placeStories = {
-  "Red Fort":
-    "A glimpse into Delhi's history, standing quietly in the middle of the city.",
+const delhiPlaces = [
+  {
+    name: "Red Fort",
+    story:
+      "A glimpse into Delhi's history, standing quietly in the middle of the city.",
+    media: [
+      "/media/delhi/IMG_20260701_122436.jpg",
+      "/media/delhi/IMG_20260702_105040.jpg",
+    ],
+  },
 
-  "Lotus Temple":
-    "A peaceful break from the noise of the city.",
+  {
+    name: "Lotus Temple",
+    story:
+      "A peaceful break from the noise of the city.",
+    media: [
+      "/media/delhi/IMG_20260702_105410.jpg",
+      "/media/delhi/IMG_20260702_110149.jpg",
+    ],
+  },
 
-  "Raj Ghat":
-    "A quiet and reflective stop during the day.",
+  {
+    name: "Raj Ghat",
+    story:
+      "A quiet and reflective stop during the day.",
+    media: [
+      "/media/delhi/IMG_20260702_120953.jpg",
+      "/media/delhi/Snapchat-1931443824.jpg",
+    ],
+  },
 
-  "Qutub Minar":
-    "One of those places that feels even more impressive when you see it up close.",
+  {
+    name: "Qutub Minar",
+    story:
+      "One of those places that feels even more impressive when you see it up close.",
+    media: [
+      "/media/delhi/Snapchat-2071327019.jpg",
+      "/media/delhi/Snapchat-2092906460.jpg",
+    ],
+  },
 
-  "Humayun's Tomb":
-    "Architecture, symmetry and a slower moment away from the busy streets.",
+  {
+    name: "Humayun's Tomb",
+    story:
+      "Architecture, symmetry and a slower moment away from the busy streets.",
+    media: [
+      "/media/delhi/Snapchat-499529389.jpg",
+      "/media/delhi/Snapchat-600987075.jpg",
+    ],
+  },
 
-  "India Gate":
-    "The final stop of a long day of exploring Delhi.",
-};
-
-const places = Object.keys(placeStories);
+  {
+    name: "India Gate",
+    story:
+      "The final stop of a long day of exploring Delhi.",
+    media: [
+      "/media/delhi/Snapchat-972272913.jpg",
+      "/media/delhi/Snapchat-980802715.jpg",
+      "/media/delhi/h264_video_20260711_180408.mp4",
+    ],
+  },
+];
 
 function DelhiSection() {
   const [selectedPlace, setSelectedPlace] = useState(null);
+
+  const selectedData = delhiPlaces.find(
+    (place) => place.name === selectedPlace
+  );
 
   return (
     <section id="delhi" className="delhi-section">
@@ -39,43 +85,77 @@ function DelhiSection() {
         </p>
       </div>
 
+
       <div className="delhi-places">
 
-        {places.map((place, index) => (
-          <div
-            key={place}
+        {delhiPlaces.map((place, index) => (
+
+          <button
+            key={place.name}
+            type="button"
             className={`delhi-place ${
-              selectedPlace === place ? "delhi-place-active" : ""
+              selectedPlace === place.name
+                ? "delhi-place-active"
+                : ""
             }`}
-            onClick={() => setSelectedPlace(place)}
+            onClick={() => {
+              setSelectedPlace(place.name);
+            }}
           >
+
             <span className="delhi-place-number">
               0{index + 1}
             </span>
 
             <span className="delhi-place-name">
-              {place}
+              {place.name}
             </span>
 
             <span className="delhi-place-arrow">
               →
             </span>
-          </div>
+
+          </button>
+
         ))}
 
       </div>
 
-      {selectedPlace && (
-        <div
-          key={selectedPlace}
-          className="selected-place"
-        >
+
+      {selectedData && (
+
+        <div className="selected-place">
+
           <p>YOU STOPPED HERE</p>
 
-          <h3>{selectedPlace}</h3>
+          <h3>
+            {selectedData.name}
+          </h3>
 
-          <p>{placeStories[selectedPlace]}</p>
+          <p>
+            {selectedData.story}
+          </p>
+
+          <button
+            type="button"
+            onClick={() => setSelectedPlace(null)}
+          >
+            CLOSE
+          </button>
+
         </div>
+
+      )}
+
+
+      {selectedData && (
+
+        <MediaGallery
+          destination={selectedData.name}
+          files={selectedData.media}
+          onClose={() => setSelectedPlace(null)}
+        />
+
       )}
 
     </section>
