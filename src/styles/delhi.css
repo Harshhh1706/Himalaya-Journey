@@ -120,6 +120,10 @@
   font-size: 29px;
   line-height: 1;
 
+  color: #A95F43 !important;
+
+  font-weight: 500;
+
   transition:
     transform 0.4s ease,
     color 0.4s ease;
