@@ -77,6 +77,7 @@
 
   padding: 25px 30px;
 
+  border: none;
   border-right: 1px solid #c9c4b8;
   border-bottom: 1px solid #c9c4b8;
 
@@ -89,12 +90,21 @@
 
   cursor: pointer;
 
+  background: #E5E0D5 !important;
+
+  color: #26352F !important;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  font-family: inherit;
+  text-align: left;
+
   transition:
     background 0.4s ease,
     color 0.4s ease,
     padding-left 0.4s ease;
 }
-
 
 /* =========================
    NUMBER
@@ -157,8 +167,7 @@
 ========================= */
 
 .delhi-place:hover {
-  background: #ded8ca;
-
+  background: #D4CEC1 !important;
   padding-left: 38px;
 }
 
