@@ -71,15 +71,14 @@
 /* =========================
    PLACE CARD
 ========================= */
-
 .delhi-place {
   min-height: 150px;
 
   padding: 25px 30px;
 
   border: none;
-  border-right: 1px solid #c9c4b8;
-  border-bottom: 1px solid #c9c4b8;
+  border-right: 1px solid #b8afa0;
+  border-bottom: 1px solid #b8afa0;
 
   display: flex;
   flex-direction: column;
@@ -90,7 +89,7 @@
 
   cursor: pointer;
 
-  background: #E5E0D5 !important;
+  background: #C8BDAA !important;
 
   color: #26352F !important;
 
