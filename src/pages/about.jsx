@@ -1,6 +1,21 @@
+import { useNavigate } from "react-router-dom";
+
+
 function About() {
+  const navigate = useNavigate();
+
   return (
     <main className="about-page">
+
+      {/* BACK TO MAIN WEBSITE */}
+      <button
+        className="about-back"
+        onClick={() => navigate("/")}
+      >
+        <span>←</span>
+        BACK TO JOURNEY
+      </button>
+
 
       {/* HERO */}
       <section className="about-hero">
@@ -102,7 +117,10 @@ function About() {
         <div className="about-value-grid">
 
           <div className="about-value">
-            <span className="about-value-number">01</span>
+
+            <span className="about-value-number">
+              01
+            </span>
 
             <h3>Mountains</h3>
 
@@ -110,11 +128,15 @@ function About() {
               High passes, quiet valleys and landscapes
               that make you stop and look.
             </p>
+
           </div>
 
 
           <div className="about-value">
-            <span className="about-value-number">02</span>
+
+            <span className="about-value-number">
+              02
+            </span>
 
             <h3>Moments</h3>
 
@@ -122,11 +144,15 @@ function About() {
               The small moments between destinations are
               often the ones worth remembering.
             </p>
+
           </div>
 
 
           <div className="about-value">
-            <span className="about-value-number">03</span>
+
+            <span className="about-value-number">
+              03
+            </span>
 
             <h3>Stories</h3>
 
@@ -134,6 +160,7 @@ function About() {
               Every place has something to say when you
               slow down enough to notice it.
             </p>
+
           </div>
 
         </div>
