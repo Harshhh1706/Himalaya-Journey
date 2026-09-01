@@ -1,62 +1,77 @@
 /* =================================================
-   ABOUT PAGE — WANDER NORTH
+   WANDER NORTH — ABOUT PAGE
 ================================================= */
 
 .about-page {
   min-height: 100vh;
-  background: #f4f3ee;
+  background: #f2f0e9;
   color: #1b211e;
-  padding-top: 100px;
   overflow: hidden;
 }
 
 
 /* =================================================
-   HERO
+   ABOUT HERO
 ================================================= */
 
 .about-hero {
-  min-height: 72vh;
+  min-height: 100vh;
+
+  padding: 150px 9% 100px;
 
   display: flex;
   align-items: center;
 
-  padding: 80px 10%;
-
   position: relative;
-  overflow: hidden;
 
   background:
     radial-gradient(
-      circle at 85% 20%,
-      rgba(196, 119, 88, 0.10),
-      transparent 30%
+      circle at 85% 25%,
+      rgba(196, 119, 88, 0.14),
+      transparent 28%
     ),
-    #f4f3ee;
+    #f2f0e9;
 }
 
 
-/* Large background text */
+/* Decorative vertical line */
+
+.about-hero::after {
+  content: "";
+
+  position: absolute;
+
+  right: 9%;
+  top: 16%;
+  bottom: 12%;
+
+  width: 1px;
+
+  background: #d2cdc0;
+
+  opacity: 0.7;
+}
+
+
+/* Huge background typography */
 
 .about-hero::before {
   content: "NORTH";
 
   position: absolute;
 
-  right: -30px;
-  bottom: -45px;
+  right: -45px;
+  bottom: -20px;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(150px, 25vw, 330px);
+  font-size: clamp(180px, 27vw, 390px);
 
-  line-height: 0.8;
+  line-height: 0.7;
 
   color: rgba(27, 33, 30, 0.035);
 
   pointer-events: none;
-
-  user-select: none;
 }
 
 
@@ -65,57 +80,63 @@
 ================================================= */
 
 .about-hero-content {
-  max-width: 760px;
+  width: 100%;
+  max-width: 1050px;
 
   position: relative;
   z-index: 2;
 
-  animation: aboutReveal 0.9s ease both;
+  animation: aboutHeroIn 1s ease both;
 }
 
 
 .about-eyebrow {
   display: flex;
   align-items: center;
-  gap: 12px;
 
-  margin: 0 0 28px;
+  gap: 13px;
+
+  margin: 0 0 30px;
 
   font-family: Arial, sans-serif;
 
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
 
   letter-spacing: 3px;
 
   text-transform: uppercase;
 
-  color: #53615a;
+  color: #68736d;
 }
 
 
 .about-eyebrow::before {
   content: "";
 
-  width: 35px;
+  width: 42px;
   height: 1px;
 
   background: #c47758;
 }
 
 
+/* =================================================
+   MAIN TITLE
+================================================= */
+
 .about-hero h1 {
   margin: 0;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(75px, 10vw, 145px);
+  font-size: clamp(90px, 12vw, 175px);
 
   font-weight: 500;
 
-  line-height: 0.78;
+  line-height: 0.72;
 
-  letter-spacing: -5px;
+  letter-spacing: -7px;
 
   color: #1b211e;
 }
@@ -123,6 +144,8 @@
 
 .about-hero h1 span {
   display: block;
+
+  margin-left: 9vw;
 
   color: #53615a;
 
@@ -132,44 +155,65 @@
 }
 
 
-.about-hero-description {
-  max-width: 550px;
+/* =================================================
+   DESCRIPTION
+================================================= */
 
-  margin: 38px 0 0;
+.about-hero-description {
+  max-width: 510px;
+
+  margin: 55px 0 0 10vw;
 
   font-family: Arial, sans-serif;
 
-  font-size: 17px;
+  font-size: 15px;
 
-  line-height: 1.8;
+  line-height: 1.9;
 
   color: #53615a;
 }
 
 
 /* =================================================
-   TRIP META
+   META INFORMATION
 ================================================= */
 
 .about-meta {
   display: flex;
 
-  gap: 55px;
+  gap: 0;
 
-  margin-top: 45px;
+  margin: 50px 0 0 10vw;
 
-  padding-top: 25px;
+  width: fit-content;
 
   border-top: 1px solid #c9c4b8;
+  border-bottom: 1px solid #c9c4b8;
 }
 
 
 .about-meta-item {
+  min-width: 125px;
+
+  padding: 17px 25px;
+
+  border-right: 1px solid #c9c4b8;
+
   display: flex;
 
   flex-direction: column;
 
-  gap: 7px;
+  gap: 6px;
+}
+
+
+.about-meta-item:first-child {
+  padding-left: 0;
+}
+
+
+.about-meta-item:last-child {
+  border-right: none;
 }
 
 
@@ -182,7 +226,7 @@
 
   text-transform: uppercase;
 
-  color: #8b918c;
+  color: #8a908b;
 }
 
 
@@ -198,38 +242,117 @@
 
 
 /* =================================================
+   FLOATING TRIP LABEL
+================================================= */
+
+.about-trip-label {
+  position: absolute;
+
+  right: 12%;
+  top: 28%;
+
+  width: 130px;
+  height: 130px;
+
+  border: 1px solid #c9c4b8;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  transform: rotate(10deg);
+
+  z-index: 3;
+}
+
+
+.about-trip-label span {
+  max-width: 80px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  line-height: 1.7;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #53615a;
+}
+
+
+.about-trip-label::after {
+  content: "✦";
+
+  position: absolute;
+
+  top: -9px;
+  right: 15px;
+
+  font-size: 14px;
+
+  color: #c47758;
+}
+
+
+/* =================================================
    STORY SECTION
 ================================================= */
 
 .about-story {
-  padding: 110px 10%;
+  padding: 130px 9%;
 
   background: #1b211e;
 
-  color: #f4f3ee;
+  color: #f2f0e9;
 
   position: relative;
 }
 
 
+.about-story::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid rgba(244, 243, 238, 0.08);
+
+  border-radius: 50%;
+
+  right: -100px;
+  top: -100px;
+}
+
+
 .about-story-inner {
-  max-width: 1050px;
+  max-width: 1100px;
 
   margin: auto;
 
   display: grid;
 
-  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-columns: 0.6fr 1.4fr;
 
   gap: 100px;
-
-  align-items: start;
 }
 
 
-/* Left */
+/* Left label */
 
 .about-story-label {
+  position: sticky;
+
+  top: 120px;
+
   font-family: Arial, sans-serif;
 
   font-size: 9px;
@@ -247,28 +370,35 @@
 
   display: block;
 
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 
   font-size: 9px;
 
-  color: #8f9b91;
+  color: #7d8982;
 }
 
 
-/* Right */
+/* =================================================
+   STORY CONTENT
+================================================= */
+
+.about-story-content {
+  position: relative;
+}
+
 
 .about-story-content h2 {
-  margin: 0 0 30px;
+  margin: 0 0 40px;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(48px, 6vw, 78px);
+  font-size: clamp(58px, 7vw, 92px);
 
   font-weight: 400;
 
-  line-height: 0.9;
+  line-height: 0.83;
 
-  letter-spacing: -2px;
+  letter-spacing: -3px;
 }
 
 
@@ -282,24 +412,66 @@
 .about-story-content p {
   max-width: 650px;
 
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 
   font-family: Arial, sans-serif;
 
-  font-size: 16px;
+  font-size: 15px;
 
   line-height: 1.9;
 
-  color: rgba(244, 243, 238, 0.68);
+  color: rgba(242, 240, 233, 0.68);
 }
 
 
 /* =================================================
-   JOURNEY VALUES
+   QUOTE
+================================================= */
+
+.about-quote {
+  margin-top: 55px;
+
+  padding: 30px 0 0;
+
+  border-top: 1px solid rgba(244, 243, 238, 0.15);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  font-style: italic;
+
+  color: #f2f0e9;
+}
+
+
+.about-quote span {
+  display: block;
+
+  margin-top: 15px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  font-style: normal;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #7d8982;
+}
+
+
+/* =================================================
+   VALUES SECTION
 ================================================= */
 
 .about-values {
-  padding: 110px 10%;
+  padding: 130px 9%;
 
   background: #ded8ca;
 }
@@ -308,14 +480,14 @@
 .about-values-header {
   max-width: 750px;
 
-  margin: 0 auto 65px;
+  margin: 0 auto 70px;
 
   text-align: center;
 }
 
 
 .about-values-header p {
-  margin: 0 0 18px;
+  margin: 0 0 20px;
 
   font-family: Arial, sans-serif;
 
@@ -325,7 +497,7 @@
 
   text-transform: uppercase;
 
-  color: #53615a;
+  color: #69736d;
 }
 
 
@@ -334,17 +506,19 @@
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(48px, 6vw, 75px);
+  font-size: clamp(55px, 7vw, 88px);
 
   font-weight: 500;
 
-  line-height: 0.9;
+  line-height: 0.82;
 
-  letter-spacing: -2px;
+  letter-spacing: -3px;
 }
 
 
-/* Cards */
+/* =================================================
+   VALUE GRID
+================================================= */
 
 .about-value-grid {
   max-width: 1100px;
@@ -362,13 +536,14 @@
 
 
 .about-value {
-  min-height: 220px;
+  min-height: 250px;
 
-  padding: 30px;
+  padding: 32px;
 
   border-right: 1px solid #bdb6a7;
-
   border-bottom: 1px solid #bdb6a7;
+
+  position: relative;
 
   transition:
     background 0.35s ease,
@@ -377,16 +552,14 @@
 
 
 .about-value:hover {
-  background: #f4f3ee;
+  background: #f2f0e9;
 
-  transform: translateY(-5px);
+  transform: translateY(-7px);
 }
 
 
 .about-value-number {
   display: block;
-
-  margin-bottom: 55px;
 
   font-family: Arial, sans-serif;
 
@@ -399,17 +572,19 @@
 
 
 .about-value h3 {
-  margin: 0 0 12px;
+  margin: 70px 0 12px;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 32px;
+  font-size: 35px;
 
   font-weight: 500;
 }
 
 
 .about-value p {
+  max-width: 260px;
+
   margin: 0;
 
   font-family: Arial, sans-serif;
@@ -418,16 +593,43 @@
 
   line-height: 1.7;
 
-  color: #53615a;
+  color: #59645e;
+}
+
+
+/* Decorative arrow */
+
+.about-value::after {
+  content: "↗";
+
+  position: absolute;
+
+  right: 28px;
+  top: 28px;
+
+  font-size: 18px;
+
+  color: #9a9588;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.about-value:hover::after {
+  transform: translate(4px, -4px);
+
+  color: #c47758;
 }
 
 
 /* =================================================
-   CLOSING
+   CLOSING SECTION
 ================================================= */
 
 .about-closing {
-  min-height: 55vh;
+  min-height: 70vh;
 
   display: flex;
 
@@ -435,23 +637,41 @@
 
   justify-content: center;
 
-  padding: 100px 10%;
+  padding: 100px 9%;
+
+  background: #f2f0e9;
 
   text-align: center;
-
-  background: #f4f3ee;
 
   position: relative;
 }
 
 
+.about-closing::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border: 1px solid #d5d0c4;
+
+  border-radius: 50%;
+
+  opacity: 0.65;
+}
+
+
 .about-closing-content {
-  max-width: 850px;
+  position: relative;
+
+  z-index: 2;
 }
 
 
 .about-closing-small {
-  margin: 0 0 25px;
+  margin: 0 0 30px;
 
   font-family: Arial, sans-serif;
 
@@ -461,7 +681,7 @@
 
   text-transform: uppercase;
 
-  color: #8b918c;
+  color: #7c857f;
 }
 
 
@@ -470,20 +690,24 @@
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(55px, 8vw, 105px);
+  font-size: clamp(75px, 10vw, 135px);
 
   font-weight: 400;
 
-  line-height: 0.85;
+  line-height: 0.72;
 
-  letter-spacing: -4px;
+  letter-spacing: -5px;
 }
 
 
 .about-closing h2 span {
+  display: block;
+
   color: #c47758;
 
   font-style: italic;
+
+  margin-left: 80px;
 }
 
 
@@ -492,26 +716,30 @@
 
   height: 1px;
 
-  margin: 40px auto 0;
+  margin: 50px auto 0;
 
   background: #c47758;
 }
 
 
 /* =================================================
-   ANIMATION
+   ANIMATIONS
 ================================================= */
 
-@keyframes aboutReveal {
+@keyframes aboutHeroIn {
+
   from {
     opacity: 0;
-    transform: translateY(30px);
+
+    transform: translateY(35px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
+
 }
 
 
@@ -522,26 +750,40 @@
 @media (max-width: 900px) {
 
   .about-hero {
-    padding: 80px 7%;
+    padding: 130px 7% 90px;
+  }
+
+  .about-hero::after {
+    display: none;
+  }
+
+  .about-trip-label {
+    right: 7%;
+    top: 18%;
   }
 
   .about-story {
-    padding: 90px 7%;
+    padding: 100px 7%;
   }
 
   .about-story-inner {
     grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 45px;
+  }
+
+  .about-story-label {
+    position: static;
   }
 
   .about-values {
-    padding: 90px 7%;
+    padding: 100px 7%;
   }
 
   .about-value-grid {
     grid-template-columns: 1fr;
   }
+
 }
 
 
@@ -551,77 +793,169 @@
 
 @media (max-width: 768px) {
 
-  .about-page {
-    padding-top: 80px;
-  }
-
   .about-hero {
-    min-height: 75vh;
+    min-height: auto;
 
-    padding: 70px 7%;
+    padding: 120px 7% 80px;
   }
+
+
+  .about-hero::before {
+    font-size: 150px;
+
+    right: -20px;
+
+    bottom: 20px;
+  }
+
+
+  .about-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
 
   .about-hero h1 {
-    font-size: 70px;
+    font-size: 72px;
 
     letter-spacing: -3px;
+
+    line-height: 0.78;
   }
+
+
+  .about-hero h1 span {
+    margin-left: 35px;
+  }
+
 
   .about-hero-description {
-    font-size: 15px;
+    margin: 40px 0 0;
 
-    line-height: 1.7;
+    font-size: 14px;
+
+    line-height: 1.8;
   }
+
 
   .about-meta {
-    gap: 30px;
+    margin: 35px 0 0;
 
-    flex-wrap: wrap;
+    width: 100%;
   }
+
+
+  .about-meta-item {
+    min-width: 0;
+
+    flex: 1;
+
+    padding: 14px 12px;
+  }
+
+
+  .about-meta-item:first-child {
+    padding-left: 0;
+  }
+
 
   .about-meta-item strong {
-    font-size: 21px;
+    font-size: 20px;
   }
+
+
+  .about-trip-label {
+    width: 85px;
+    height: 85px;
+
+    right: 7%;
+    top: 12%;
+
+    opacity: 0.65;
+  }
+
+
+  .about-trip-label span {
+    font-size: 6px;
+  }
+
 
   .about-story {
     padding: 80px 7%;
   }
 
+
   .about-story-content h2 {
-    font-size: 50px;
+    font-size: 55px;
+
+    letter-spacing: -2px;
   }
+
 
   .about-story-content p {
     font-size: 14px;
   }
 
+
+  .about-quote {
+    font-size: 25px;
+  }
+
+
   .about-values {
     padding: 80px 7%;
   }
 
-  .about-values-header h2 {
-    font-size: 52px;
+
+  .about-values-header {
+    margin-bottom: 50px;
   }
 
+
+  .about-values-header h2 {
+    font-size: 52px;
+
+    letter-spacing: -2px;
+  }
+
+
   .about-value {
-    min-height: 180px;
+    min-height: 190px;
 
     padding: 25px;
   }
 
-  .about-value-number {
-    margin-bottom: 35px;
+
+  .about-value h3 {
+    margin-top: 45px;
+
+    font-size: 31px;
   }
 
+
   .about-closing {
-    min-height: 45vh;
+    min-height: 55vh;
 
     padding: 80px 7%;
   }
 
-  .about-closing h2 {
-    font-size: 62px;
 
-    letter-spacing: -2px;
+  .about-closing::before {
+    width: 280px;
+    height: 280px;
   }
+
+
+  .about-closing h2 {
+    font-size: 72px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .about-closing h2 span {
+    margin-left: 40px;
+  }
+
 }
