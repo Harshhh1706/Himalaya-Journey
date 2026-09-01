@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Home from "./pages/Home";
@@ -11,7 +13,10 @@ import JourneyTimeline from "./components/JourneyTimeline";
 import FinalMemory from "./components/FinalMemory";
 import Footer from "./components/Footer";
 
-function App() {
+import About from "./pages/about";
+
+
+function MainPage() {
   return (
     <>
       <Navbar />
@@ -21,11 +26,8 @@ function App() {
       <Home />
 
       <HamptaSection />
-
       <ChandratalSection />
-
       <ManaliSection />
-
       <DelhiSection />
 
       <JourneyTimeline />
@@ -36,5 +38,29 @@ function App() {
     </>
   );
 }
+
+
+function App() {
+  return (
+    <BrowserRouter>
+
+      <Routes>
+
+        <Route
+          path="/"
+          element={<MainPage />}
+        />
+
+        <Route
+          path="/about"
+          element={<About />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
+  );
+}
+
 
 export default App;
