@@ -16,7 +16,14 @@
 .about-hero {
   min-height: 100vh;
   padding: 150px 10% 100px;
-  background: #1B211E;
+
+  background: linear-gradient(
+    135deg,
+    #1B211E 0%,
+    #263D46 55%,
+    #314C59 100%
+  );
+
   color: #F4F3EE;
   display: flex;
   align-items: center;
@@ -26,22 +33,28 @@
 
 .about-hero::before {
   content: "";
+
   position: absolute;
   width: 420px;
   height: 420px;
-  border: 1px solid rgba(244, 243, 238, 0.12);
+
+  border: 1px solid rgba(220, 229, 232, 0.16);
   border-radius: 50%;
+
   right: -120px;
   top: 15%;
 }
 
 .about-hero::after {
   content: "";
+
   position: absolute;
   width: 700px;
   height: 700px;
-  border: 1px solid rgba(244, 243, 238, 0.06);
+
+  border: 1px solid rgba(220, 229, 232, 0.07);
   border-radius: 50%;
+
   right: -260px;
   top: 0;
 }
@@ -49,6 +62,7 @@
 .about-hero-content {
   width: 100%;
   max-width: 1100px;
+
   position: relative;
   z-index: 2;
 }
@@ -56,31 +70,41 @@
 .about-eyebrow {
   font-size: 11px;
   letter-spacing: 3px;
-  color: #AAB5AE;
+
+  color: #9FB5BE;
+
   margin-bottom: 30px;
 }
 
 .about-hero h1 {
   font-family: "Cormorant Garamond", serif;
+
   font-size: clamp(80px, 14vw, 190px);
   font-weight: 500;
+
   line-height: 0.78;
   letter-spacing: -5px;
+
   margin: 0;
 }
 
 .about-hero h1 span {
   display: block;
+
   margin-left: 12%;
-  color: #C47758;
+
+  color: #DCE5E8;
 }
 
 .about-hero-description {
   max-width: 520px;
+
   margin: 55px 0 0 12%;
+
   font-size: 16px;
   line-height: 1.8;
-  color: #C8CEC9;
+
+  color: #C8D1D3;
 }
 
 
@@ -90,6 +114,7 @@
 
 .about-meta {
   margin: 65px 0 0 12%;
+
   display: flex;
   gap: 70px;
 }
@@ -103,14 +128,18 @@
 .about-meta-item span {
   font-size: 9px;
   letter-spacing: 2px;
+
   text-transform: uppercase;
-  color: #8C9A90;
+
+  color: #8FA5AD;
 }
 
 .about-meta-item strong {
   font-size: 14px;
   font-weight: 500;
+
   letter-spacing: 1px;
+
   color: #F4F3EE;
 }
 
@@ -121,23 +150,32 @@
 
 .about-trip-label {
   position: absolute;
+
   right: 4%;
   bottom: 8%;
+
   width: 135px;
   height: 135px;
-  border: 1px solid rgba(244, 243, 238, 0.3);
+
+  border: 1px solid rgba(220, 229, 232, 0.35);
+
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-align: center;
+
   transform: rotate(-8deg);
 }
 
 .about-trip-label span {
   font-size: 8px;
+
   line-height: 1.7;
   letter-spacing: 2px;
+
   color: #D8CFBC;
 }
 
@@ -147,13 +185,21 @@
 ================================ */
 
 .about-story {
-  background: #F4F3EE;
   padding: 140px 10%;
+
+  background: linear-gradient(
+    135deg,
+    #F4F3EE 0%,
+    #F1F3F0 55%,
+    #DCE5E8 100%
+  );
 }
 
 .about-story-inner {
   max-width: 1100px;
+
   margin: auto;
+
   display: grid;
   grid-template-columns: 25% 75%;
 }
@@ -161,7 +207,8 @@
 .about-story-label {
   font-size: 10px;
   letter-spacing: 3px;
-  color: #8C9A90;
+
+  color: #607985;
 }
 
 .about-story-content {
@@ -170,22 +217,29 @@
 
 .about-story-content h2 {
   font-family: "Cormorant Garamond", serif;
+
   font-size: clamp(55px, 7vw, 100px);
   font-weight: 500;
+
   line-height: 0.9;
+
   margin: 0 0 45px;
+
   color: #1B211E;
 }
 
 .about-story-content h2 span {
-  color: #C47758;
+  color: #607985;
 }
 
 .about-story-content p {
   max-width: 650px;
+
   font-size: 16px;
   line-height: 1.9;
+
   color: #59635D;
+
   margin-bottom: 22px;
 }
 
@@ -196,22 +250,32 @@
 
 .about-quote {
   margin-top: 55px;
+
   padding: 35px 40px;
-  border-left: 2px solid #C47758;
-  background: #E8E5DC;
+
+  border-left: 2px solid #607985;
+
+  background: #DCE5E8;
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 28px;
   line-height: 1.2;
+
   color: #1B211E;
 }
 
 .about-quote span {
   display: block;
+
   margin-top: 15px;
+
   font-family: inherit;
+
   font-size: 11px;
   letter-spacing: 2px;
-  color: #8C9A90;
+
+  color: #607985;
 }
 
 
@@ -221,42 +285,56 @@
 
 .about-values {
   padding: 130px 10%;
-  background: #1B211E;
+
+  background: #263D46;
+
   color: #F4F3EE;
 }
 
 .about-values-header {
   max-width: 1100px;
+
   margin: auto;
 }
 
 .about-values-header p {
   font-size: 10px;
   letter-spacing: 3px;
-  color: #8C9A90;
+
+  color: #9FB5BE;
+
   margin-bottom: 25px;
 }
 
 .about-values-header h2 {
   font-family: "Cormorant Garamond", serif;
+
   font-size: clamp(55px, 7vw, 95px);
   font-weight: 500;
+
   line-height: 0.9;
+
   max-width: 650px;
+
   margin: 0;
 }
 
 .about-value-grid {
   max-width: 1100px;
+
   margin: 90px auto 0;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   border-top: 1px solid rgba(244, 243, 238, 0.2);
 }
 
 .about-value {
   padding: 35px 35px 20px 0;
+
   min-height: 250px;
+
   border-right: 1px solid rgba(244, 243, 238, 0.2);
 }
 
@@ -271,19 +349,24 @@
 .about-value-number {
   font-size: 10px;
   letter-spacing: 2px;
-  color: #C47758;
+
+  color: #9FB5BE;
 }
 
 .about-value h3 {
   margin: 55px 0 15px;
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 38px;
   font-weight: 500;
 }
 
 .about-value p {
   max-width: 260px;
-  color: #AAB5AE;
+
+  color: #B7C4C7;
+
   font-size: 14px;
   line-height: 1.7;
 }
@@ -295,11 +378,19 @@
 
 .about-closing {
   min-height: 70vh;
+
   padding: 100px 10%;
-  background: #D8CFBC;
+
+  background: linear-gradient(
+    135deg,
+    #D8CFBC 0%,
+    #DCE5E8 100%
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-align: center;
 }
 
@@ -310,29 +401,104 @@
 .about-closing-small {
   font-size: 10px;
   letter-spacing: 3px;
+
   color: #59635D;
+
   margin-bottom: 25px;
 }
 
 .about-closing h2 {
   font-family: "Cormorant Garamond", serif;
+
   font-size: clamp(70px, 12vw, 160px);
+
   line-height: 0.8;
+
   font-weight: 500;
+
   margin: 0;
+
   color: #1B211E;
 }
 
 .about-closing h2 span {
-  color: #C47758;
+  color: #607985;
 }
 
 .about-closing-line {
   width: 100px;
   height: 1px;
+
   background: #1B211E;
+
   margin: 45px auto 0;
+
   opacity: 0.4;
+}
+
+
+/* ================================
+   BACK TO JOURNEY
+================================ */
+
+.about-back {
+  position: fixed;
+
+  top: 105px;
+  left: 5%;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 16px;
+
+  background: rgba(38, 61, 70, 0.78);
+
+  color: #F4F3EE;
+
+  border: 1px solid rgba(220, 229, 232, 0.3);
+
+  border-radius: 30px;
+
+  font-family: inherit;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-back span {
+  font-size: 17px;
+
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+.about-back:hover {
+  background: #607985;
+
+  border-color: #607985;
+
+  transform: translateX(4px);
+}
+
+.about-back:hover span {
+  transform: translateX(-4px);
 }
 
 
@@ -341,6 +507,7 @@
 ================================ */
 
 @media (max-width: 900px) {
+
   .about-hero {
     padding: 140px 7% 90px;
   }
@@ -360,6 +527,7 @@
 
   .about-story-inner {
     grid-template-columns: 1fr;
+
     gap: 45px;
   }
 
@@ -374,7 +542,9 @@
   .about-value,
   .about-value:not(:first-child) {
     padding: 35px 0;
+
     border-right: none;
+
     border-bottom: 1px solid rgba(244, 243, 238, 0.2);
   }
 
@@ -389,13 +559,16 @@
 ================================ */
 
 @media (max-width: 600px) {
+
   .about-hero {
     min-height: 100svh;
+
     padding: 120px 7% 70px;
   }
 
   .about-hero h1 {
     font-size: 72px;
+
     letter-spacing: -2px;
   }
 
@@ -405,11 +578,13 @@
 
   .about-hero-description {
     margin: 45px 0 0;
+
     font-size: 14px;
   }
 
   .about-meta {
     margin: 45px 0 0;
+
     gap: 35px;
   }
 
@@ -427,6 +602,7 @@
 
   .about-quote {
     padding: 25px;
+
     font-size: 24px;
   }
 
@@ -449,68 +625,14 @@
   .about-closing h2 {
     font-size: 85px;
   }
-}
-/* ================================
-   BACK TO JOURNEY
-================================ */
 
-.about-back {
-  position: fixed;
-  top: 105px;
-  left: 5%;
-  z-index: 1000;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 10px 16px;
-
-  background: rgba(27, 33, 30, 0.75);
-  color: #F4F3EE;
-
-  border: 1px solid rgba(244, 243, 238, 0.25);
-  border-radius: 30px;
-
-  font-family: inherit;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 2px;
-
-  cursor: pointer;
-
-  backdrop-filter: blur(8px);
-
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.about-back span {
-  font-size: 17px;
-  line-height: 1;
-  transition: transform 0.3s ease;
-}
-
-.about-back:hover {
-  background: #C47758;
-  border-color: #C47758;
-  transform: translateX(4px);
-}
-
-.about-back:hover span {
-  transform: translateX(-4px);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
   .about-back {
     top: 90px;
+
     left: 6%;
+
     padding: 9px 13px;
+
     font-size: 8px;
   }
 }
