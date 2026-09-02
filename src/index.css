@@ -8,12 +8,13 @@
 @import "./styles/journey.css";
 @import "./styles/destinations.css";
 @import "./styles/ending.css";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
 @import "./styles/footer.css";
 @import "./styles/about.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap");
 /* =========================================
    WANDER NORTH
-   MIDNIGHT MOUNTAIN THEME
+   MIDNIGHT MOUNTAIN THEME  
 ========================================= */
 
 

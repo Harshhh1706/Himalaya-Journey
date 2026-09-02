@@ -107,7 +107,7 @@ function About() {
           <p>WHAT THIS JOURNEY IS ABOUT</p>
 
           <h2>
-            Four things worth
+            Three things worth
             remembering.
           </h2>
 
